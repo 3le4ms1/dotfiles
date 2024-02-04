@@ -1,0 +1,4 @@
+#+TITLE: Dotfiles
+#+AUTHOR: 3le4ms1
+
+Configuration files for things, across different systems
