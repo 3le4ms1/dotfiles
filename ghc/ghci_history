@@ -1,0 +1,68 @@
+:q
+:q
+main
+:l Main.hs 
+:l Main.hs 
+main
+:l Main.hs 
+:l Main.hs 
+:l Main.hs 
+:l Main.hs 
+main
+:l Main.hs 
+:l Main.hs 
+:l Main.hs 
+main
+:l Main.hs 
+:l Main.hs 
+:q
+:Prelude
+:import prelude
+:load Prelude
+:show
+main
+:l prova.hs
+main
+:l prova.hs
+:l prova.hs
+main
+main
+main
+:l prova.hs
+:q
+Prelude>
+:q
+:doc cast
+:q
+:doc cast
+:l Main
+:set -haddock
+:doc cast
+:doc cast
+main
+:l Main
+main
+:l Main
+main
+:l Main
+main
+main
+Main
+:l Main
+:l Main.hs 
+:q
+:doc IO
+:h
+:w
+:q
+:Q
+.Q
+:l Main.hs 
+:l Main.hs 
+:q
+:q
+main
+:l Main.hs 
+main
+:l Main.hs 
+exit

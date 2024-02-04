@@ -1,0 +1,9 @@
+*.log
+*.xopp
+# Generic programs
+/Kitware/
+/komorebi/
+/nvim/
+# Games
+/CassetteBeasts/
+/YourOnlyMoveIsHUSTLE/
