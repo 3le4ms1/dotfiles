@@ -1,7 +1,7 @@
 ;;; eshell.el --- Configurazione della shell integrata `eshell'
 
 ;;; Commentary:
-;;; Configurazione di base della shell integrata a emacs `eshell'
+;;; Configurazione di base della shell integrata a Emacs `eshell'
 ;;; L'obiettivo è quella di renderla una shell utilizzabile, customizzandola
 
 ;;; Code:
@@ -28,5 +28,7 @@
                 (if (= (user-uid) 0) " # " " 𝛌 "))))
 
 (setq eshell-prompt-regexp "^[^𝛌]+ 𝛌 ")
+
+(add-hook 'eshell-mode-hook #'(lambda () (company-mode -1)))
 
 ;;; eshell.el ends here.

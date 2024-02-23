@@ -6,13 +6,14 @@
 ;; linguaggi di programmazione
 
 ;;; Code:
-(setq lsp-haskell-server-path "C:\\haskell\\ghcup\\bin\\")
-
+(require 'lsp-mode)
+;; (setq lsp-keymap-prefix "C-c l")
 (setq lsp-ui-doc-show-with-cursor nil)
 
-;; (define-key 'lsp-mode-map (kbd "C-c <SPC>") (lambda ()
-                                    ;; (interactive)
-                                    ;; (lsp-ui-doc-show)
-                                    ;; (lsp-ui-doc-focus-frame)))
+(setq lsp-haskell-server-path "C:\\haskell\\ghcup\\bin\\")
+(define-key lsp-mode-map (kbd "<f2>") (lambda ()
+                                          (interactive)
+                                          (lsp-ui-doc-show)
+                                          (lsp-ui-doc-focus-frame)))
 
 ;;; lsp.el ends here.

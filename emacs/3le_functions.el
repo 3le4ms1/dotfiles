@@ -30,11 +30,26 @@
                                       (when (thing-at-point-looking-at org-link-bracket-re)
                                         (match-string-no-properties 1)))))
 
-(defun 3le/set-home ()
-  "Set pwd to $HOME."
-  (interactive)
-  (progn (setq default-directory "C:\\Users\\ismae\\Documents\\HOME\\")
-         (setq command-line-default-directory "C:\\Users\\ismae\\Documents\\Home\\")))
+;; (defun 3le/consult-ripgrep-single-file ()
+;;     "Call `consult-ripgrep' for the current buffer (a single file)."
+;;     (interactive)
+;;     (let ((consult-project-function (lambda (x) nil))
+;;           (consult-ripgrep-args
+;;            (concat "rg "
+;;                    "--null "
+;;                    "--line-buffered "
+;;                    "--color=never "
+;;                    "--line-number "
+;;                    "--smart-case "
+;;                    "--no-heading "
+;;                    "--max-columns=1000 "
+;;                    "--max-columns-preview "
+;;                    "--with-filename "
+;;                    (shell-quote-argument buffer-file-name)
+;;                    )))
+;;       (consult-ripgrep)))
+
+;; (global-set-key (kbd "C-s") '3le/consult-ripgrep-single-file)
 
 ;; =# Reload della configurazione
 (defun 3le/lconf ()

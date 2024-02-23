@@ -1,6 +1,7 @@
 *.log
 *.xopp
-# Generic programs
+# Non useful
+/bash/.bash_history
 /Kitware/
 /komorebi/
 /xournalpp/metadata/

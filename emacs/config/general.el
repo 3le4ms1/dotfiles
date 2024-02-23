@@ -23,7 +23,6 @@
 
 ;; (setq display-line-numbers-type 'relative)
 
-;; (display-)
 ;; (display-time-mode 1)
 
 ;;=# add-hook
@@ -32,9 +31,10 @@
 
 ;;=# set
 ;; (setq-default default-directory "C:\\Users\\ismae\\Documents\\HOME\\")
-(setq default-directory "C:\\Users\\ismae\\Documents\\HOME\\")
+(setq default-directory "~/")
 (setq command-line-default-directory "C:\\Users\\ismae\\Documents\\Home\\")
 
+(setenv "USER" "3le")
 (setenv "LANG" "it_IT, en_US")
 (set-language-environment 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -63,8 +63,6 @@
 (setq display-time-format "%H:%M")
 
 ;; (setq backup-directory-alist '((".*" . "~/.Trash")))
-
-(setq scheme-program-name "guile")
 
 ;;=# put
 (put 'downcase-region 'disabled nil)
