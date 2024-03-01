@@ -12,7 +12,7 @@
   :init
   ;; (setq lsp-keymap-prefix "C-c l")
   (setq lsp-ui-doc-show-with-cursor nil)
-  (when (eq system-type 'windows)
+  (when (eq system-type 'windows-nt)
       (setq lsp-haskell-server-path "C:\\haskell\\ghcup\\bin\\"))
   (define-key lsp-mode-map (kbd "<f2>") (lambda ()
                                           (interactive)

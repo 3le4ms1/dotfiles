@@ -33,7 +33,7 @@
 ;;=# set
 (setq default-directory "~/")
 
-(when (eq system-type 'windows)
+(when (eq system-type 'windows-nt)
   ;; (setq-default default-directory "C:\\Users\\ismae\\Documents\\HOME\\")
   (setq command-line-default-directory "C:\\Users\\ismae\\Documents\\Home\\"))
 
