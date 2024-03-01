@@ -1,14 +1,18 @@
 ;;; god-mode.el --- Configurazione per il package `god-mode'
 
-;;; Summary:
+;;; Commentary:
 
 ;;; Code:
 
-(require 'god-mode)
+(use-package god-mode
+  :ensure t
+  :init
 
-(global-set-key (kbd "C-<f8>") #'(lambda ()
-                                   (interactive)
-                                   (message "Switch god-mode")
-                                   (god-mode-all)))
 
+  (global-set-key (kbd "C-<f8>") #'(lambda ()
+                                     (interactive)
+                                     (message "Switch god-mode")
+                                     (god-mode-all)))
+
+  )
 ;;; god-mode.el ends here.

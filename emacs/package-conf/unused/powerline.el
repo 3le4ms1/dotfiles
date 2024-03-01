@@ -9,7 +9,11 @@
 ;;; Code:
 
 ;;=# Powerline-evil
-(require 'powerline-evil)
-;; (powerline-evil-vim-color-theme)
+(use-package powerline-evil
+  :ensure t
+  :init
 
+  (powerline-evil-vim-color-theme)
+
+  )
 ;;; powerline.el ends here.

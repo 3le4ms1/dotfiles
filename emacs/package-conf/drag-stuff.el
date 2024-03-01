@@ -8,12 +8,15 @@
 ;;; Code:
 
 ;;=# Drag-stuff
-(require 'drag-stuff)
-(global-set-key (kbd "M-<up>")   #'drag-stuff-up)
-(global-set-key (kbd "M-<down>") #'drag-stuff-down)
+(use-package drag-stuff
+  :ensure t
+  :init
+  (global-set-key (kbd "M-<up>")   #'drag-stuff-up)
+  (global-set-key (kbd "M-<down>") #'drag-stuff-down)
 
-(global-set-key (kbd "M-p")   #'drag-stuff-up)
-(global-set-key (kbd "M-n") #'drag-stuff-down)
+  (global-set-key (kbd "M-p")   #'drag-stuff-up)
+  (global-set-key (kbd "M-n") #'drag-stuff-down)
+  )
 
 
 ;;; drag-stuff.el ends here.

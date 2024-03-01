@@ -1,12 +1,16 @@
 ;;; rainbow-delimiters.el --- Configurazione del package `rainbow-delimiters'
 
-;;; Summary:
+;;; Commentary:
 ;; Configurazione package `rainbow delimiters', che colora le parentesi
 ;; a due a due uguali
 
 ;;; Code:
 
 ;; =# Rainbow Delimiters
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+(use-package rainbow-delimiters
+  :ensure t
+  :init
+  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
+  )
 ;;; rainbow-delimiters.el ends here.
