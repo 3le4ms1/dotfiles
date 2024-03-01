@@ -35,7 +35,7 @@
 ;;                                           ;; Aggiunti a mano
 ;;                                            ";;;"
 ;;                                            )))
-(if (string= (face-attribute 'default :family) "Iosevka NF")
+(when (string= (face-attribute 'default :family) "Iosevka NF")
     (progn (ligature-set-ligatures 'prog-mode '(
                                                 "<->" "<-->" "<--->" "<---->" "<----->"
                                                 ;; Double-ended equals arrows ----------------

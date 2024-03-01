@@ -6,11 +6,13 @@
 ;;; Code:
 
 ;; =# Pacchetti da MELPA
-(require 'package)
+(use-package package
+  :ensure t
 
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(add-to-list 'package-archives '("elpa"  . "http://elpa.gnu.org/packages/") t)
-;; (add-to-list 'package-archives '("gnu-devel" . "https://elpa.gnu.org/devel/") t)
-;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
-
+  :init
+  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+  (add-to-list 'package-archives '("elpa"  . "http://elpa.gnu.org/packages/") t)
+  ;; (add-to-list 'package-archives '("gnu-devel" . "https://elpa.gnu.org/devel/") t)
+  ;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
+  )
 ;;; package.el ends here.

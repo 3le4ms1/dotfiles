@@ -6,9 +6,8 @@
 
 (use-package god-mode
   :ensure t
+
   :init
-
-
   (global-set-key (kbd "C-<f8>") #'(lambda ()
                                      (interactive)
                                      (message "Switch god-mode")

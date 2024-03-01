@@ -10,8 +10,8 @@
 ;;Smex
 (use-package smex
   :ensure t
-  :init
 
+  :init
   (smex-initialize)
   (global-set-key (kbd "M-X") 'smex-major-mode-commands)
   ;; This is your old M-x.

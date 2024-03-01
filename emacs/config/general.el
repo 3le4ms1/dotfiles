@@ -17,6 +17,7 @@
 
 (electric-pair-mode 1)
 (show-paren-mode 1)
+(package-initialize)
 
 (when (version<= "26.0.50" emacs-version)
   (global-display-line-numbers-mode))
@@ -30,9 +31,11 @@
 (add-hook 'prog-mode-hook #'auto-fill-mode)
 
 ;;=# set
-;; (setq-default default-directory "C:\\Users\\ismae\\Documents\\HOME\\")
 (setq default-directory "~/")
-(setq command-line-default-directory "C:\\Users\\ismae\\Documents\\Home\\")
+
+(when (eq system-type 'windows)
+  ;; (setq-default default-directory "C:\\Users\\ismae\\Documents\\HOME\\")
+  (setq command-line-default-directory "C:\\Users\\ismae\\Documents\\Home\\"))
 
 (setenv "USER" "3le")
 (setenv "LANG" "it_IT, en_US")

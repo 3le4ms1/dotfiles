@@ -5,7 +5,4 @@
 
 ;;; Code:
 
-(message "Valore della directory iniziale: %s" default-directory)
-
-
 ;;; debug.el ends here.

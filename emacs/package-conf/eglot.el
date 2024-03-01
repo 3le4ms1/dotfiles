@@ -9,6 +9,8 @@
 
 (use-package eglot
   :ensure t
+
+  :init
   ;; (define-key eglot-mode-map (kbd "C-c <tab>") #'company-complete)
   (define-key eglot-mode-map (kbd "<f2>")    #'eldoc-doc-buffer)
   (define-key eglot-mode-map (kbd "C-c e f n") #'flymake-goto-next-error)

@@ -8,8 +8,8 @@
 ;; =# Evil mode
 (use-package evil
   :ensure t
-  :init
 
+  :init
   (setq select-enable-clipboard t)
   (setq save-interprogram-paste-before-kill t)
 
@@ -64,4 +64,5 @@
   (global-set-key (kbd "C-x e") 'evil-mode)
   (global-set-key (kbd "C-c g d") 'evil-goto-definition)
   )
+
 ;;; evil.el ends here.
