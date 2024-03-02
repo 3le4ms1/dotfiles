@@ -8,13 +8,15 @@ Configuration files for things, across different systems.
   terminal. On =Windows= it must be runned as administrator.
 
 ** Linux
-  #+begin_src bash
-    $ ./install.sh
-  #+end_src
+   #+begin_src bash
+     $ ./install.sh
+   #+end_src
 
 ** Windows
-   The =sudo= script can be installed via the [[https://www.scoop.sh][scoop]] package manager. Or it just
-   can be runned in an elevated shell.
+   The =sudo= script can be installed via the [[https://www.scoop.sh][scoop]] package manager.
+   In alternative the script can be just runned in ad elevated shell.
+
    #+begin_src powershell
      > sudo install.ps1
+     # install.ps1
    #+end_src
