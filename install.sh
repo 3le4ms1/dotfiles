@@ -83,6 +83,7 @@ On_IWhite='\033[0;107m'   # White
 # exit
 # fi
 
+# https://stackoverflow.com/questions/6212219/passing-parameters-to-a-bash-function
 # https://stackoverflow.com/questions/5767062/how-to-check-if-a-symlink-exists
 function create_link {
     # $1 = prgram name

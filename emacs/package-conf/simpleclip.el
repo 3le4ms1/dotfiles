@@ -6,9 +6,8 @@
 
 ;;; Code:
 (use-package simpleclip
-  :ensure t
 
-  :init
+  :config
   (simpleclip-mode 1)
   (global-set-key (kbd "C-w") 'simpleclip-cut)
   (global-set-key (kbd "M-w") 'simpleclip-copy)

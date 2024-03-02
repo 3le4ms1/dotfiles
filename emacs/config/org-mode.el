@@ -7,14 +7,12 @@
 (setq-default org-support-shift-select t)
 
 (add-hook 'org-mode-hook 'org-appear-mode)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 ;; Shortcut per i #+begin_something
 (require 'org-tempo)
-
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-
 (require 'org-inlinetask)
-;; (require 'org-bullets)
+(use-package org-bullets)
 
 (setq org-todo-keywords
       ;; aggiungere ([l]!/!) per timestamp al cambiamento

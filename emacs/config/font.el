@@ -17,6 +17,9 @@
 
 ;; ;;=# Ligatures
 
+(use-package ligature
+
+  :config
 ;; ;; Enable the www ligature in every possible major mode
 (ligature-set-ligatures 't '("www"))
 
@@ -94,4 +97,5 @@
 
 (global-ligature-mode 't)
 
+)
 ;;; font.el ends here.

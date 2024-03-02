@@ -14,7 +14,9 @@
          ("M-A" . marginalia-cycle))
 
   ;; The :init section is always executed.
-  :init
+
+  ;; The :config section is executed only if the package is installed
+  :config
 
   ;; Marginalia must be activated in the :init section of use-package such that
   ;; the mode gets enabled right away. Note that this forces loading the

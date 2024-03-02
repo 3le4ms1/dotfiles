@@ -8,9 +8,8 @@
 
 ;; =# Rainbow Delimiters
 (use-package rainbow-delimiters
-  :ensure t
 
-  :init
+  :config
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
   )
 

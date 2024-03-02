@@ -23,6 +23,20 @@ Configuration files for things, across different systems.
    In alternative the script can be just runned in ad elevated shell.
 
    #+begin_src powershell
-     > sudo install.ps1
-     # install.ps1
+     PS> sudo install.ps1
+     PS(root)> install.ps1
    #+end_src
+
+* Program specific things
+** Emacs
+   When starting =emacs= for the first time on a clean platform, there are some
+   operations to be executed:
+   - running =emacs= as a daemon to create the =server= file in the
+     =~/.emacs.d/server= directory, by running the command:
+     #+begin_src bash
+       $ emacs --daemon
+     #+end_src
+   - install all of the packages that are missing, using emacs function =M-x
+     package-install-selected-packages RET=. It is useful to run the command
+     multiple times, in case of errors regard too many files opened or something
+     else.

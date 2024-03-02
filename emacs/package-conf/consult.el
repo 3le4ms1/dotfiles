@@ -5,10 +5,12 @@
 ;; `vertigo'
 
 ;;; Code:
-(use-package consult
-  :ensure t
 
-  :init
+(use-package compat)
+
+(use-package consult
+
+  :config
   (setq completion-styles '(substring basic))
   (global-set-key (kbd "C-S-s") 'consult-ripgrep)
   )

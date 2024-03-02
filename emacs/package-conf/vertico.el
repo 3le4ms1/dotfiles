@@ -6,7 +6,7 @@
 
 ;; Enable vertico
 (use-package vertico
-  :init
+  :config
   (vertico-mode)
 
   ;; Different scroll margin
@@ -24,12 +24,12 @@
 
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist
-  :init
+  :config
   (savehist-mode))
 
 ;; A few more useful configurations...
 (use-package emacs
-  :init
+  :config
   ;; Add prompt indicator to `completing-read-multiple'.
   ;; We display [CRM<separator>], e.g., [CRM,] if the separator is a comma.
   (defun crm-indicator (args)

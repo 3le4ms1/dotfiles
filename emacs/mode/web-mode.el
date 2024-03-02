@@ -4,7 +4,9 @@
 
 ;;; Code:
 
-(require 'web-mode)
+(use-package web-mode
+  :ensure t
+  :config
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
@@ -19,5 +21,5 @@
 ;; (add-to-list 'auto-mode-alist '("\\.ts\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
-
+)
 ;;; web-mode.el ends here.

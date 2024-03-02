@@ -7,9 +7,8 @@
 
 ;;; Code:
 (use-package lsp-mode
-  :ensure t
 
-  :init
+  :config
   ;; (setq lsp-keymap-prefix "C-c l")
   (setq lsp-ui-doc-show-with-cursor nil)
   (when (eq system-type 'windows-nt)

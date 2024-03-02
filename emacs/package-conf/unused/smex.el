@@ -9,9 +9,8 @@
 ;; =# SMEX keybinding (IDO per M-x)
 ;;Smex
 (use-package smex
-  :ensure t
 
-  :init
+  :config
   (smex-initialize)
   (global-set-key (kbd "M-X") 'smex-major-mode-commands)
   ;; This is your old M-x.

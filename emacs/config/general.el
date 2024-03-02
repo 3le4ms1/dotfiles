@@ -5,7 +5,11 @@
 
 ;;; Code:
 
-;;=# general
+;; =# server
+(load "server")
+(unless (server-running-p) (server-start))
+
+;; =# general
 ;; (ido-mode 1)
 (tool-bar-mode 0)
 (menu-bar-mode 0)
@@ -17,7 +21,6 @@
 
 (electric-pair-mode 1)
 (show-paren-mode 1)
-(package-initialize)
 
 (when (version<= "26.0.50" emacs-version)
   (global-display-line-numbers-mode))
@@ -38,7 +41,7 @@
   (setq command-line-default-directory "C:\\Users\\ismae\\Documents\\Home\\"))
 
 (setenv "USER" "3le")
-(setenv "LANG" "it_IT, en_US")
+(setenv "LANG" "it_IT,en_US")
 (set-language-environment 'utf-8)
 (set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)

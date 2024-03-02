@@ -4,9 +4,8 @@
 
 ;;; Code:
 (use-package crux
-  :ensure t
 
-  :init
+  :config
   (global-set-key (kbd "C-S-K") #'crux-kill-whole-line)
   (global-set-key (kbd "C-a") #'crux-move-beginning-of-line)
   ;; (global-set-key (kbd "C-c o") #'crux-open-with)

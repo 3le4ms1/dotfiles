@@ -4,10 +4,12 @@
 
 ;;; Code:
 
-(require 'which-key)
-(which-key-mode)
+(use-package which-key
 
-;; (which-key-setup-side-window-right-bottom)
-(which-key-setup-minibuffer)
+  :config
+  (which-key-mode)
 
+  ;; (which-key-setup-side-window-right-bottom)
+  (which-key-setup-minibuffer)
+)
 ;;; which-key.el ends here.

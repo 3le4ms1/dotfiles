@@ -7,10 +7,11 @@
 ;;; Code:
 
 
-(use-package ispell
-  :ensure t
+;; https://200ok.ch/posts/2020-08-22_setting_up_spell_checking_with_multiple_dictionaries.html
 
-  :init
+(use-package ispell
+
+  :config
   (when (eq system-type 'windows-nt)
     (setq ispell-program-name "C:\\ProgramData\\chocolatey\\bin\\hunspell.exe"))
 
