@@ -9,9 +9,10 @@
 
 (use-package ispell
   :ensure t
-  :init
 
-  (setq ispell-program-name "hunspell")
+  :init
+  (when (eq system-type 'windows-nt)
+    (setq ispell-program-name "C:\\ProgramData\\chocolatey\\bin\\hunspell.exe"))
 
   ;; Controllare la variabile `ispell-dictionary-alist' per la formattazione
   (add-to-list 'ispell-hunspell-dictionary-alist
@@ -23,6 +24,18 @@
                '("3le/italian-english"
                  "[[:alpha:]]" "[^[:alpha:]]" "[']" nil
                  ("-d" "it_IT,en_US") nil utf-8))
+
+  (when (eq system-type 'windows-nt)
+    (add-to-list 'ispell-hunspell-dict-paths-alist
+                 '("it_IT" . "C:\\Hunspell\\it_IT.dic"))
+    (add-to-list 'ispell-hunspell-dict-paths-alist
+                 '("it_IT" . "C:\\Hunspell\\it_IT.aff"))
+    (add-to-list 'ispell-hunspell-dict-paths-alist
+                 '("en_US" . "C:\\Hunspell\\en_US.dic"))
+    )
+
+
+  ;; (ispell-set-spellchecker-params)
 
   ;; (setq ispell-local-dictionary-alist ispell-hunspell-dictionary-alist)
 

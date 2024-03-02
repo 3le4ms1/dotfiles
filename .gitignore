@@ -1,11 +1,14 @@
 *.log
 *.xopp
+
 # Non useful
 /bash/.bash_history
-/Kitware/
+/Godot/
 /komorebi/
-/xournalpp/metadata/
 /nvim/
+/xournalpp/metadata/
+/xournalpp/autosave/
+
 # Games
 /CassetteBeasts/
 /YourOnlyMoveIsHUSTLE/

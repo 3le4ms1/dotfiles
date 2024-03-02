@@ -53,7 +53,7 @@ set linkfgcolor #bd93f9
 set circleoutlinecolor #44475a
 set diffbgcolors {{#342a36} #283636}
 set web_browser {cmd /c start}
-set geometry(main) 1920x966+0+32
+set geometry(main) 1920x966+0+42
 set geometry(state) zoomed
 set geometry(topwidth) 1918
 set geometry(topheight) 534

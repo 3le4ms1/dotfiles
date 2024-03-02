@@ -1,4 +1,20 @@
 #+TITLE: Dotfiles
 #+AUTHOR: 3le4ms1
 
-Configuration files for things, across different systems
+Configuration files for things, across different systems.
+
+* Deploy
+  To install the configuration just run the installation script in the
+  terminal. On =Windows= it must be runned as administrator.
+
+** Linux
+  #+begin_src bash
+    $ ./install.sh
+  #+end_src
+
+** Windows
+   The =sudo= script can be installed via the [[https://www.scoop.sh][scoop]] package manager. Or it just
+   can be runned in an elevated shell.
+   #+begin_src powershell
+     > sudo install.ps1
+   #+end_src
