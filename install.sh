@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-set -xe
+set -e
 
 # https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
 
@@ -84,40 +84,38 @@ On_IWhite='\033[0;107m'   # White
 # fi
 
 # https://stackoverflow.com/questions/5767062/how-to-check-if-a-symlink-exists
-function create_link () {
+function create_link {
     # $1 = prgram name
-    # $2 = file path
+    # $2 = link target
     # $3 = link path
-    echo "${CYAN}[install] $1"
+
+    # check if the link exists
     if [ -L $3 ]; then
+        # check if the link is valid
         if [ -e $3 ]; then
-            echo "${CYAN}[install] $1: link already exists"
+            echo "${CYAN}[install] $1: link already exists - $(readlink -f $3)"
         else
             echo "${PURPLE}[install] $1: broken link, recreating"
             rm $3
-            ln -s $2 $3
-            echo "${yellow}[install] $1: link created"
+            ln -s $(readlink -f $2) $3
+            echo "${yellow}[install] $1: link created - $(readlink -f $3)"
         fi
+    # check if another file with the same name exists
     elif [ -e $3 ]; then
         echo "${RED}[install] $1: file already exists but is not a link"
         echo "${RED}[install] $1: remove the file $3 and retry"
     else
-        ln -s $2 $3
-        echo "${yellow}[install] $1: link created"
+        ln -s $(readlink -f $2) $3
+        echo "${YELLOW}[install] $1: link created - $(readlink -f $3)"
     fi
-
     return 0
-
 }
 
 PWD=$(dirname -- $0)
 USRHOME=${PWD}/..
 
-# echo $(readlink -f ${USRHOME})
+create_link "emacs" ${PWD}/emacs/init.el ${USRHOME}/.emacs
+create_link "bash"  ${PWD}/bash/.bashrc  ${USRHOME}/.bashrc
+create_link "bash"  ${PWD}/bash/.bash_profile  ${USRHOME}/.bash_profile
 
-create_link "emacs" ${PWD}/emacs/init.el ${USRHOME}/.emacs1
-create_link "bash"  ${PWD}/bash/.bashrc  ${USRHOME}/.bashrc1
-
-# https://stackoverflow.com/questions/5163144/what-are-the-special-dollar-sign-shell-variables#5163260
-# echo $?
 exit 0

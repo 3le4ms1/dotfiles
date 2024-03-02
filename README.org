@@ -7,6 +7,12 @@ Configuration files for things, across different systems.
   To install the configuration just run the installation script in the
   terminal. On =Windows= it must be runned as administrator.
 
+  The deploy scripts must be executed in a directory directly under the user
+  home, even if executed as root. For example:
+  #+begin_src bash
+    ~/.config/install.sh
+  #+end_src
+
 ** Linux
    #+begin_src bash
      $ ./install.sh
