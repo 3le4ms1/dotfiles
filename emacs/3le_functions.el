@@ -51,6 +51,15 @@
 
 ;; (global-set-key (kbd "C-s") '3le/consult-ripgrep-single-file)
 
+(defun 3le/package-unavailable-packages ()
+  "Return all the packages that are not available."
+  (interactive)
+  (let* ((not-installed (seq-remove #'package-installed-p package-selected-packages))
+         (unavailable (seq-filter (lambda (p) (not (assq p package-archive-contents)))
+                                  not-installed)))
+    unavailable))
+
+
 ;; =# Reload della configurazione
 (defun 3le/lconf ()
   "Load the .emacs file."
