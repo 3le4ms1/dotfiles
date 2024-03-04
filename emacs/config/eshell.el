@@ -29,6 +29,4 @@
 
 (setq eshell-prompt-regexp "^[^𝛌]+ 𝛌 ")
 
-(add-hook 'eshell-mode-hook #'(lambda () (company-mode -1)))
-
 ;;; eshell.el ends here.
