@@ -115,8 +115,8 @@ function create_link {
 SCRIPTDIR=$(readlink -f $(dirname -- $0))
 USRHOME=$(readlink -f ${PWD}/..)
 
-create_link "emacs" ${SCRIPTDIR}/emacs/init.el ${USRHOME}/.emacs
-create_link "bash"  ${SCRIPTDIR}/bash/.bashrc  ${USRHOME}/.bashrc
+create_link "emacs" ${SCRIPTDIR}/emacs/init.el       ${USRHOME}/.emacs
+create_link "bash"  ${SCRIPTDIR}/bash/.bashrc        ${USRHOME}/.bashrc
 create_link "bash"  ${SCRIPTDIR}/bash/.bash_profile  ${USRHOME}/.bash_profile
 
 exit 0
