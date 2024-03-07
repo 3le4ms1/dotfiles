@@ -43,7 +43,6 @@ family = "Iosevka Nerd Font"
 x = 0
 y = 0
 
-
 # TODO: vedere se funziona questo metodo per mettere le partentesi in nvim
 [[keyboard.bindings]]
 chars = "{"

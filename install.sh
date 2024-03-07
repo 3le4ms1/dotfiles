@@ -115,9 +115,10 @@ function create_link {
 SCRIPTDIR=$(readlink -f $(dirname -- $0))
 USRHOME=$(readlink -f ${PWD}/..)
 
-create_link "emacs" ${SCRIPTDIR}/emacs/init.el       ${USRHOME}/.emacs
-create_link "bash"  ${SCRIPTDIR}/bash/.bashrc        ${USRHOME}/.bashrc
-create_link "bash"  ${SCRIPTDIR}/bash/.bash_profile  ${USRHOME}/.bash_profile
+create_link "emacs"  ${SCRIPTDIR}/emacs/init.el      ${USRHOME}/.emacs
+create_link "bash"   ${SCRIPTDIR}/bash/.bashrc       ${USRHOME}/.bashrc
+create_link "bash"   ${SCRIPTDIR}/bash/.bash_profile ${USRHOME}/.bash_profile
+create_link "mintty" ${SCRIPTDIR}/bash/.minttyrc     ${USRHOME}/.minttyrc
 # TODO: create_link "powershell" # i don't know where to put this on Linux
 
 exit 0

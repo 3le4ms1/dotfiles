@@ -54,6 +54,8 @@ $script:usrhome = $(resolve-path $script:pwd\..)
 create_link "emacs"      "$script:pwd/emacs/init.el"      "$script:usrhome/.emacs"
 create_link "bash"       "$script:pwd/bash/.bashrc"       "$script:usrhome/.bashrc"
 create_link "bash"       "$script:pwd/bash/.bash_profile" "$script:usrhome/.bash_profile"
+create_link "mintty"     "$script:pwd/bash/.minttyrc" "$script:usrhome/.minttyrc"
 create_link "powershell" "$script:pwd/Powershell/Microsoft.PowerShell_profile.ps1"  "$env:userprofile/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
+create_link "alacritty" "$script:pwd/alacritty/alacritty.toml"  "$env:appdata/alacritty/alacritty.toml"
 
 exit 0

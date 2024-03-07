@@ -33,6 +33,7 @@ Invoke-Expression (&scoop-search --hook)
 
 # =# Emacs keybindings
 Set-PSReadLineOption -EditMode Emacs
+Set-PSReadlineOption -BellStyle None
 
 # =# Alias
 Remove-Item Alias:man
