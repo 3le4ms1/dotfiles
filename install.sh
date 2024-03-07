@@ -120,6 +120,7 @@ create_link "bash"   ${SCRIPTDIR}/bash/.bashrc       ${USRHOME}/.bashrc
 create_link "bash"   ${SCRIPTDIR}/bash/.bash_profile ${USRHOME}/.bash_profile
 create_link "mintty" ${SCRIPTDIR}/bash/.minttyrc     ${USRHOME}/.minttyrc
 create_link "git"    ${SCRIPTDIR}/git/.gitconfig     ${USRHOME}/.gitconfig
+create_link "ghci"   ${SCRIPTDIR}/ghc/.ghci          ${USRHOME}/.ghci
 
 # TODO: create_link "powershell" # i don't know where to put theese on Linux
 # TODO: create_link "alacritty"
