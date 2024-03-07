@@ -31,7 +31,7 @@ function create_link {
             } else {
                 install-write DARKMAGENTA "$($name): broken link, recreating"
                 rm -Force $link_path
-                $null = new-item -itemtype SymbolicLink -Target $link_target -Path $link_path
+                $null = new-item -itemtype SymbolicLink -Target $(resolve-path $link_target) -Path $link_path
                 install-write YELLOW "$($name): link created - $(resolve-path $link_path)"
             }
         } else {
@@ -39,7 +39,7 @@ function create_link {
             install-write RED "$($name): remove the file $link_path and retry"
         }
     } else {
-        $null = new-item -itemtype SymbolicLink -Target $link_target -Path $link_path
+        $null = new-item -itemtype SymbolicLink -Target $(resolve-path $link_target) -Path $link_path
         install-write YELLOW "$($name): link created - $(resolve-path $link_path)"
     }
 }
@@ -49,9 +49,11 @@ $script:usrhome = $(resolve-path $script:pwd\..)
 
 # echo $script:pwd.toString()
 # echo $script:usrhome.toString()
+# echo $(resolve-path $env:userprofile).Path
 
-create_link "emacs" "$script:pwd/emacs/init.el" "$script:usrhome/.emacs"
-create_link "bash"  "$script:pwd/bash/.bashrc"  "$script:usrhome/.bashrc"
-create_link "bash"  "$script:pwd/bash/.bash_profile"  "$script:usrhome/.bash_profile"
+create_link "emacs"      "$script:pwd/emacs/init.el"      "$script:usrhome/.emacs"
+create_link "bash"       "$script:pwd/bash/.bashrc"       "$script:usrhome/.bashrc"
+create_link "bash"       "$script:pwd/bash/.bash_profile" "$script:usrhome/.bash_profile"
+create_link "powershell" "$script:pwd/Powershell/Microsoft.PowerShell_profile.ps1"  "$env:userprofile/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
 
 exit 0

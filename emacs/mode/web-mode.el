@@ -1,6 +1,6 @@
 ;;; web-mode.el --- Configurazione web-mode
 
-;;; Summary:
+;;; Commentary:
 
 ;;; Code:
 

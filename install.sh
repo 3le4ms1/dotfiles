@@ -118,5 +118,6 @@ USRHOME=$(readlink -f ${PWD}/..)
 create_link "emacs" ${SCRIPTDIR}/emacs/init.el       ${USRHOME}/.emacs
 create_link "bash"  ${SCRIPTDIR}/bash/.bashrc        ${USRHOME}/.bashrc
 create_link "bash"  ${SCRIPTDIR}/bash/.bash_profile  ${USRHOME}/.bash_profile
+# TODO: create_link "powershell" # i don't know where to put this on Linux
 
 exit 0

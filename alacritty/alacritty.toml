@@ -55,17 +55,6 @@ chars = "}"
 key = "}"
 mods = "Alt"
 
-# TODO: Alt+P e Alt+N ricerca nella cronologia dei comandi
-# [[keyboard.bindings]]
-# action = ""
-# key = "P"
-# mods = "Alt"
- 
-# [[keyboard.bindings]]
-# chars = "\u0037["
-# key = "N"
-# mods = "Alt"
-
 [[keyboard.bindings]]
 action = "Paste"
 key = "V"
@@ -123,8 +112,8 @@ mods = "Command"
 
 [[keyboard.bindings]]
 action = "ResetFontSize"
-key = "Minus"
-mods = "Command|Shift"
+key = "0"
+mods = "Control|Shift"
 
 [[keyboard.bindings]]
 chars = "\u001B[5;2~"
@@ -362,12 +351,12 @@ mods = "Command"
 [[keyboard.bindings]]
 action = "ScrollLineUp"
 key = "P"
-mods = "Control|Shift"
+mods = "Alt"
 
 [[keyboard.bindings]]
 action = "ScrollLineDown"
 key = "N"
-mods = "Control|Shift"
+mods = "Alt"
 
 [[keyboard.bindings]]
 chars = "\u0017"
