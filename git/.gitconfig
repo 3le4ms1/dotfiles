@@ -1,0 +1,21 @@
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[user]
+	name = 3le4ms1
+	email = ismaeledegiorgi@gmail.com
+[credential]
+	helper = manager-core
+[core]
+	; editor = \"C:/Program Files (x86)/GitExtensions/GitExtensions.exe\" fileeditor
+	fsmonitor = true
+[pull]
+	rebase = false
+[fetch]
+	prune = false
+[rebase]
+	autoStash = false
+	autosquash = false
+	updateRefs = false

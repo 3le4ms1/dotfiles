@@ -119,6 +119,9 @@ create_link "emacs"  ${SCRIPTDIR}/emacs/init.el      ${USRHOME}/.emacs
 create_link "bash"   ${SCRIPTDIR}/bash/.bashrc       ${USRHOME}/.bashrc
 create_link "bash"   ${SCRIPTDIR}/bash/.bash_profile ${USRHOME}/.bash_profile
 create_link "mintty" ${SCRIPTDIR}/bash/.minttyrc     ${USRHOME}/.minttyrc
-# TODO: create_link "powershell" # i don't know where to put this on Linux
+create_link "git"    ${SCRIPTDIR}/git/.gitconfig     ${USRHOME}/.gitconfig
+
+# TODO: create_link "powershell" # i don't know where to put theese on Linux
+# TODO: create_link "alacritty"
 
 exit 0

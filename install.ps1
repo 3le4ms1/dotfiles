@@ -44,18 +44,20 @@ function create_link {
     }
 }
 
-$script:pwd = $(resolve-path $PSScriptRoot)
-$script:usrhome = $(resolve-path $script:pwd\..)
+$script:scriptdir = $(resolve-path $PSScriptRoot)
+$script:usrhome = $(resolve-path $script:scriptdir\..)
 
-# echo $script:pwd.toString()
+# echo $script:scriptdir.toString()
 # echo $script:usrhome.toString()
 # echo $(resolve-path $env:userprofile).Path
 
-create_link "emacs"      "$script:pwd/emacs/init.el"      "$script:usrhome/.emacs"
-create_link "bash"       "$script:pwd/bash/.bashrc"       "$script:usrhome/.bashrc"
-create_link "bash"       "$script:pwd/bash/.bash_profile" "$script:usrhome/.bash_profile"
-create_link "mintty"     "$script:pwd/bash/.minttyrc" "$script:usrhome/.minttyrc"
-create_link "powershell" "$script:pwd/Powershell/Microsoft.PowerShell_profile.ps1"  "$env:userprofile/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
-create_link "alacritty" "$script:pwd/alacritty/alacritty.toml"  "$env:appdata/alacritty/alacritty.toml"
+create_link "emacs"      "$script:scriptdir/emacs/init.el" "$script:usrhome/.emacs"
+create_link "bash"       "$script:scriptdir/bash/.bashrc" "$script:usrhome/.bashrc"
+create_link "bash"       "$script:scriptdir/bash/.bash_profile" "$script:usrhome/.bash_profile"
+create_link "mintty"     "$script:scriptdir/bash/.minttyrc" "$script:usrhome/.minttyrc"
+create_link "git"        "$script:scriptdir/git/.gitconfig" "$script:usrhome/.gitconfig"
+create_link "ghci"       "$script:scriptdir/ghc/.ghci" "$script:usrhome/.ghci"
+create_link "powershell" "$script:scriptdir/Powershell/Microsoft.PowerShell_profile.ps1" "$env:userprofile/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
+create_link "alacritty"  "$script:scriptdir/alacritty/alacritty.toml" "$env:appdata/alacritty/alacritty.toml"
 
 exit 0
