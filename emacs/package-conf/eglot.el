@@ -8,7 +8,7 @@
 ;;; Code:
 
 (use-package eglot
-
+  :ensure t
   :config
   ;; (define-key eglot-mode-map (kbd "C-c <tab>") #'company-complete)
   (define-key eglot-mode-map (kbd "<f2>")    #'eldoc-doc-buffer)
@@ -20,10 +20,9 @@
   ;; (add-hook 'c-mode-hook 'eglot-ensure)
   ;; (add-hook 'c++-mode-hook 'eglot-ensure)
 
-  (add-to-list 'eglot-server-programs '((c-mode c++-mode) . ("clangd")))
+  ;; (add-to-list 'eglot-server-programs '((c-mode c++-mode) . ("clangd")))
 
   ;; (add-to-list 'eglot-server-programs '((c-mode) . ("clangd" "-resource-dir C:\\msys64\\mingw64\\include")))
-
 
   ;; (add-hook 'latex-mode-hook 'eglot-ensure)
 

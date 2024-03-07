@@ -8,7 +8,7 @@
 
 ;;=# WindMove
 (use-package windmove
-
+  :ensure t
   :config
   (global-set-key (kbd "C-c <left>")  'windmove-left)
   (global-set-key (kbd "C-c <right>") 'windmove-right)
@@ -19,5 +19,5 @@
   (global-set-key (kbd "C-c f") 'windmove-right)
   (global-set-key (kbd "C-c p") 'windmove-up)
   (global-set-key (kbd "C-c n") 'windmove-down)
-)
+  )
 ;;; windmove.el ends here.

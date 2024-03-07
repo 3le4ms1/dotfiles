@@ -14,7 +14,7 @@
   ;; (setq inferior-lisp-mode "sbcl")
   ;; (slime))
 
-;;=# Shell Commands
+;; =# Shell Commands
 (defun 3le/open-alacritty-here ()
   "Opens Alacritty in working directory."
   (interactive)

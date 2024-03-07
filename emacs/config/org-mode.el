@@ -12,7 +12,10 @@
 ;; Shortcut per i #+begin_something
 (require 'org-tempo)
 (require 'org-inlinetask)
-(use-package org-bullets)
+
+(use-package org-bullets
+  :ensure t
+  )
 
 (setq org-todo-keywords
       ;; aggiungere ([l]!/!) per timestamp al cambiamento

@@ -7,7 +7,7 @@
 
 ;; =# Evil mode
 (use-package evil
-
+  :ensure t
   :config
   (setq select-enable-clipboard t)
   (setq save-interprogram-paste-before-kill t)

@@ -6,10 +6,12 @@
 
 ;;; Code:
 
-(use-package compat)
+(use-package compat
+  :ensure t
+  )
 
 (use-package consult
-
+  :ensure t
   :config
   (setq completion-styles '(substring basic))
   (global-set-key (kbd "C-S-s") 'consult-ripgrep)

@@ -9,7 +9,7 @@
 ;; =# SMEX keybinding (IDO per M-x)
 ;;Smex
 (use-package smex
-
+  :ensure t
   :config
   (smex-initialize)
   (global-set-key (kbd "M-X") 'smex-major-mode-commands)
@@ -27,7 +27,6 @@
                   (insert ?-)
                 (funcall ,ido-cannot-complete-command)))))
       ad-do-it))
-
-
   )
+
 ;;; smex.el ends here.

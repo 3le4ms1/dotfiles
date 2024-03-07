@@ -10,7 +10,7 @@
 ;; https://200ok.ch/posts/2020-08-22_setting_up_spell_checking_with_multiple_dictionaries.html
 
 (use-package ispell
-
+  :ensure t
   :config
   (when (eq system-type 'windows-nt)
     (setq ispell-program-name "C:\\ProgramData\\chocolatey\\bin\\hunspell.exe"))

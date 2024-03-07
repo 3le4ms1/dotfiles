@@ -8,7 +8,7 @@
 
 ;; =# Flycheck
 (use-package flycheck
-
+  :ensure t
   :config
   (global-flycheck-mode)
   (with-eval-after-load 'rust-mode

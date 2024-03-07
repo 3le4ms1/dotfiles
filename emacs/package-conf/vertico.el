@@ -6,6 +6,7 @@
 
 ;; Enable vertico
 (use-package vertico
+  :ensure t
   :config
   (vertico-mode)
 
@@ -24,11 +25,14 @@
 
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist
+  :ensure t
   :config
-  (savehist-mode))
+  (savehist-mode)
+  )
 
 ;; A few more useful configurations...
 (use-package emacs
+  :ensure t
   :config
   ;; Add prompt indicator to `completing-read-multiple'.
   ;; We display [CRM<separator>], e.g., [CRM,] if the separator is a comma.
@@ -52,6 +56,7 @@
         #'command-completion-default-include-p)
 
   ;; Enable recursive minibuffers
-  (setq enable-recursive-minibuffers t))
+  (setq enable-recursive-minibuffers t)
+  )
 
 ;;; vertico.el ends here.

@@ -5,7 +5,7 @@
 ;;; Code:
 
 (use-package god-mode
-
+  :enable t
   :config
   (global-set-key (kbd "C-<f8>") #'(lambda ()
                                      (interactive)

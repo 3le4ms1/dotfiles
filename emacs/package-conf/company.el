@@ -9,7 +9,7 @@
 
 ;;=# Company
 (use-package company
-
+  :ensure t
   :config
   ;; (add-hook 'foo-mode-hook 'eglot-ensure)
   (add-hook 'after-init-hook 'global-company-mode)

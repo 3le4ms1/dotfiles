@@ -9,7 +9,7 @@
 
 ;;=# Drag-stuff
 (use-package drag-stuff
-
+  :ensure t
   :config
   (global-set-key (kbd "M-<up>")   #'drag-stuff-up)
   (global-set-key (kbd "M-<down>") #'drag-stuff-down)

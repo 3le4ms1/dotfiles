@@ -5,9 +5,11 @@
 ;; `eglot', utilizzati per l'interoperabilità con i server lsp dei vari
 ;; linguaggi di programmazione
 
+;; https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
+
 ;;; Code:
 (use-package lsp-mode
-
+  :ensure t
   :config
   ;; (setq lsp-keymap-prefix "C-c l")
   (setq lsp-ui-doc-show-with-cursor nil)

@@ -8,7 +8,7 @@
 
 ;;=# Buffer Move
 (use-package buffer-move
-
+  :ensure t
   :config
   (global-set-key (kbd "<C-M-up>")    'buf-move-up)
   (global-set-key (kbd "<C-M-down>")  'buf-move-down)
