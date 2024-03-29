@@ -110,6 +110,9 @@
 ;;=# indent
 (define-key global-map (kbd "RET") 'newline-and-indent)
 (add-hook 'f90-mode-hook (lambda ()
+                           (local-set-key (kbd "RET")
+                                          'reindent-then-newline-and-indent)))
+(add-hook 'c-mode-hook (lambda ()
                            (local-set-key (kbd "RET") 'reindent-then-newline-and-indent)))
 
 ;;; general.el ends here.

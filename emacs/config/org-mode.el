@@ -17,6 +17,14 @@
   :ensure t
   )
 
+(use-package ox-epub
+  :ensure t
+  )
+
+(use-package ox-gemini
+  :ensure t
+  )
+
 (setq org-todo-keywords
       ;; aggiungere ([l]!/!) per timestamp al cambiamento
       '((sequence "TODO(t)" "PROG(p)" "NEXT(n)" "ONGN(o)" "INTR(i)" "|" "CNLD(c)" "DONE(d)"))

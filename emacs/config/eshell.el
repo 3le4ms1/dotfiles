@@ -29,4 +29,15 @@
 
 (setq eshell-prompt-regexp "^[^𝛌]+ 𝛌 ")
 
+(setq 3le/eshell-aliases
+      '((cls  . clear-scrollback)
+        (open  . find-file)
+        (ll . (lambda () (eshell/ls '-laF)))
+        )
+      )
+
+(mapc (lambda (alias)
+        (defalias (car alias) (cdr alias)))
+      3le/eshell-aliases)
+
 ;;; eshell.el ends here.

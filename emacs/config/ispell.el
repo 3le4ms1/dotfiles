@@ -35,7 +35,6 @@
                  '("en_US" . "C:\\Hunspell\\en_US.dic"))
     )
 
-
   ;; (ispell-set-spellchecker-params)
 
   ;; (setq ispell-local-dictionary-alist ispell-hunspell-dictionary-alist)
