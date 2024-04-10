@@ -41,6 +41,7 @@
   (setq command-line-default-directory "C:\\Users\\ismae\\Documents\\Home\\"))
 
 (setenv "USER" "3le")
+(setenv "HOST" "msi")
 (setenv "LANG" "it_IT,en_US")
 (set-language-environment 'utf-8)
 (set-default-coding-systems 'utf-8)

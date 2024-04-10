@@ -25,20 +25,20 @@
 
 (global-set-key (kbd "C-<return>") (kbd "M-j"))
 
-(global-set-key "\C-x2" (lambda () (interactive) (split-window-vertically) (other-window 1)))
+(global-set-key "\C-x2" (lambda () (interactive) (split-window-vertically)   (other-window 1)))
 (global-set-key "\C-x3" (lambda () (interactive) (split-window-horizontally) (other-window 1)))
 
 (global-set-key (kbd "C-x C-b") 'bs-show)
 
 (global-set-key (kbd "C-c C-<SPC>") 'company-complete)
 
-(global-set-key (kbd "C-c d") (lambda ()
+(global-set-key (kbd "C-S-d") (lambda ()
                                 (interactive)
                                 (move-beginning-of-line 1)
                                 (kill-line)
                                 (yank)
                                 (open-line 1)
-                                (next-line 1)
+                                (forward-line 1)
                                 (yank)))
 
 ;; =# Inserimento caratteri `{' e `}'

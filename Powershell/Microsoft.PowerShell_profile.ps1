@@ -42,6 +42,8 @@ Set-Alias man man.exe
 Remove-Item Alias:rm
 Set-Alias rm rm.exe
 
+# Remove-Item Alias:curl
+
 # Remove-Item Alias:find
 # Set-Alias find -Value "C:\msys64\msys64\usr\bin\find.exe"
 

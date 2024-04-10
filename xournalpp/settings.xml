@@ -30,8 +30,8 @@
   <property name="layoutVertical" value="false"/>
   <property name="layoutRightToLeft" value="false"/>
   <property name="layoutBottomToTop" value="false"/>
-  <property name="numPairsOffset" value="1"/>
-  <property name="presentationMode" value="false"/>
+  <property name="numPairsOffset" value="0"/>
+  <property name="presentationMode" value="true"/>
   <!--Which gui elements are hidden if you are in Fullscreen mode, separated by a colon (,)-->
   <property name="fullscreenHideElements" value="mainMenubar"/>
   <!--Which gui elements are hidden if you are in Presentation mode, separated by a colon (,)-->
