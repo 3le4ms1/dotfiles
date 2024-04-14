@@ -117,8 +117,17 @@ if ! shopt -oq posix; then
 fi
 
 # Configurazione di 3le
-alias cls='clear'
-alias ex='exit'
+# MOTD
+MOTDS=( "(* - *)" " -///-" "o///o" ":3")
+echo ${MOTDS[$(( $RANDOM % ${#MOTDS[@]} ))]}
 
-# Bash configuration
+alias cls='clear'
+alias main="./main"
+alias emacs="/mnt/c/tools/bin/emacs.exe"
+
+export WINHOME="/mnt/c/Users/ismae/Documents/HOME"
 export XDG_CONFIG_HOME="~/.config"
+
+# Graphics
+export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+export LIBGL_ALWAYS_INDIRECT=1

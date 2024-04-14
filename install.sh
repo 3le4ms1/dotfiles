@@ -113,7 +113,8 @@ function create_link {
 }
 
 SCRIPTDIR=$(readlink -f $(dirname -- $0))
-USRHOME=$(readlink -f ${PWD}/..)
+# USRHOME=$(readlink -f ${PWD}/..)
+USRHOME=$HOME
 
 create_link "emacs"  ${SCRIPTDIR}/emacs/init.el      ${USRHOME}/.emacs
 create_link "bash"   ${SCRIPTDIR}/bash/.bashrc       ${USRHOME}/.bashrc

@@ -9,17 +9,16 @@
 (load  "~/.config/emacs/package.el")
 
 ;; (load "~/.config/emacs/debug.el")
-;; (load  "~/.config/emacs/3le_functions.el")
 
-(mapc 'load (file-expand-wildcards "~/.config/emacs/local/*.el"))
+(mapc #'load (file-expand-wildcards "~/.config/emacs/local/*.el"))
 
-(mapc 'load (file-expand-wildcards "~/.config/emacs/config/*.el"))
+(mapc #'load (file-expand-wildcards "~/.config/emacs/config/*.el"))
 
-(mapc 'load (file-expand-wildcards "~/.config/emacs/standalone/*.el"))
+(mapc #'load (file-expand-wildcards "~/.config/emacs/standalone/*.el"))
 
-(mapc 'load (file-expand-wildcards "~/.config/emacs/foreign/*.el"))
+(mapc #'load (file-expand-wildcards "~/.config/emacs/foreign/*.el"))
 
-(mapc 'load (file-expand-wildcards "~/.config/emacs/package-conf/*.el"))
+(mapc #'load (file-expand-wildcards "~/.config/emacs/package-conf/*.el"))
 
 ;; =# Parte auto gestita da Emacs
 (custom-set-variables
