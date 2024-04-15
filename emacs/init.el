@@ -7,14 +7,14 @@
 
 ;;=# File loading
 (defvar 3le/emacs-conf-dir (concat (getenv "XDG_CONFIG_HOME") "/emacs"))
-(load  (concat 3le/emacs-conf-dir "/package.el"))
 
 ;; (load (concat 3le/emacs-conf-dir "/debug.el"))
+(load (concat 3le/emacs-conf-dir "/package.el"))
+(load (concat 3le/emacs-conf-dir "/foreign/foreign.el"))
 
 (mapc #'load (file-expand-wildcards (concat 3le/emacs-conf-dir "/local/*.el")))
 (mapc #'load (file-expand-wildcards (concat 3le/emacs-conf-dir "/config/*.el")))
 (mapc #'load (file-expand-wildcards (concat 3le/emacs-conf-dir "/standalone/*.el")))
-(mapc #'load (file-expand-wildcards (concat 3le/emacs-conf-dir "/foreign/*.el")))
 (mapc #'load (file-expand-wildcards (concat 3le/emacs-conf-dir "/package-conf/*.el")))
 
 ;; =# Parte auto gestita da Emacs

@@ -11,7 +11,7 @@
 
 ;;; Code:
 
-(setq foreign-packages '(
+(defvar 3le/foreign-packages '(
                          ("fasm-mode"    "fasm-mode.el"  "https://github.com/the-little-language-designer/fasm-mode.git")
                          ("simpc-mode"   "simpc-mode.el" "https://github.com/rexim/simpc-mode.git")
                          ("old-ada-mode" "ada-mode.el"   "https://github.com/tkurtbond/old-ada-mode.git")
@@ -28,7 +28,7 @@
     (load (concat 3le/emacs-conf-dir "/foreign/"
                   (car package) "/" (car (cdr package))))))
 
-(mapc #'3le/check-dir-exists foreign-packages)
+(mapc #'3le/check-dir-exists 3le/foreign-packages)
 
 ;; fasm-mode
 ;; https://github.com/the-little-language-designer/fasm-mode.git
@@ -41,6 +41,6 @@
 ;; old-ada-mode
 ;; https://github.com/tkurtbond/old-ada-mode.git
 (cl-loop for ext in '("\\.gpr$" "\\.ada$" "\\.ads$" "\\.adb$")
-              do (add-to-list 'auto-mode-alist (cons ext 'ada-mode)))
+         do (add-to-list 'auto-mode-alist (cons ext 'ada-mode)))
 
 ;;; _foreign.el ends here.
