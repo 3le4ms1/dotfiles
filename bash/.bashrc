@@ -118,7 +118,8 @@ fi
 
 # Configurazione di 3le
 # MOTD
-MOTDS=( "(* - *)" " -///-" "o///o" ":3")
+MOTDS=( "(* - *)" "(-///-)" "(o///o)" ":3" "( ^ - ^)" "(* ^ *)" "(+ - +)"
+        "(+ = +)" "(@ - @)")
 echo ${MOTDS[$(( $RANDOM % ${#MOTDS[@]} ))]}
 
 alias cls='clear'

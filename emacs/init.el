@@ -6,19 +6,16 @@
 ;;; Code:
 
 ;;=# File loading
-(load  "~/.config/emacs/package.el")
+(defvar 3le/emacs-conf-dir (concat (getenv "XDG_CONFIG_HOME") "/emacs"))
+(load  (concat 3le/emacs-conf-dir "/package.el"))
 
-;; (load "~/.config/emacs/debug.el")
+;; (load (concat 3le/emacs-conf-dir "/debug.el"))
 
-(mapc #'load (file-expand-wildcards "~/.config/emacs/local/*.el"))
-
-(mapc #'load (file-expand-wildcards "~/.config/emacs/config/*.el"))
-
-(mapc #'load (file-expand-wildcards "~/.config/emacs/standalone/*.el"))
-
-(mapc #'load (file-expand-wildcards "~/.config/emacs/foreign/*.el"))
-
-(mapc #'load (file-expand-wildcards "~/.config/emacs/package-conf/*.el"))
+(mapc #'load (file-expand-wildcards (concat 3le/emacs-conf-dir "/local/*.el")))
+(mapc #'load (file-expand-wildcards (concat 3le/emacs-conf-dir "/config/*.el")))
+(mapc #'load (file-expand-wildcards (concat 3le/emacs-conf-dir "/standalone/*.el")))
+(mapc #'load (file-expand-wildcards (concat 3le/emacs-conf-dir "/foreign/*.el")))
+(mapc #'load (file-expand-wildcards (concat 3le/emacs-conf-dir "/package-conf/*.el")))
 
 ;; =# Parte auto gestita da Emacs
 (custom-set-variables
