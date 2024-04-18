@@ -43,4 +43,4 @@
 (cl-loop for ext in '("\\.gpr$" "\\.ada$" "\\.ads$" "\\.adb$")
          do (add-to-list 'auto-mode-alist (cons ext 'ada-mode)))
 
-;;; _foreign.el ends here.
+;;; foreign.el ends here.

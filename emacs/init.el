@@ -9,8 +9,8 @@
 (defvar 3le/emacs-conf-dir (concat (getenv "XDG_CONFIG_HOME") "/emacs"))
 
 ;; (load (concat 3le/emacs-conf-dir "/debug.el"))
-(load (concat 3le/emacs-conf-dir "/package.el"))
 (load (concat 3le/emacs-conf-dir "/foreign/foreign.el"))
+(load (concat 3le/emacs-conf-dir "/package.el"))
 
 (mapc #'load (file-expand-wildcards (concat 3le/emacs-conf-dir "/local/*.el")))
 (mapc #'load (file-expand-wildcards (concat 3le/emacs-conf-dir "/config/*.el")))

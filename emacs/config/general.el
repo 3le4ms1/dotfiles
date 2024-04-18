@@ -6,8 +6,8 @@
 ;;; Code:
 
 ;; =# server
-(load "server")
-(unless (server-running-p) (server-start))
+;; (load "server")
+;; (unless (server-running-p) (server-start))
 
 ;; =# general
 ;; (ido-mode 1)
@@ -34,11 +34,9 @@
 (add-hook 'prog-mode-hook #'auto-fill-mode)
 
 ;;=# set
-(setq default-directory "~/")
-
 (when (eq system-type 'windows-nt)
-  ;; (setq-default default-directory "C:\\Users\\ismae\\Documents\\HOME\\")
-  (setq command-line-default-directory "C:\\Users\\ismae\\Documents\\Home\\"))
+  (setq-default default-directory (getenv "HOME"))
+  (setq command-line-default-directory (getenv "HOME")))
 
 (setenv "USER" "3le")
 (setenv "HOST" "msi")
