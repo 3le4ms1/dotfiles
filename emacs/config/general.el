@@ -34,9 +34,11 @@
 (add-hook 'prog-mode-hook #'auto-fill-mode)
 
 ;;=# set
-(when (eq system-type 'windows-nt)
-  (setq-default default-directory (getenv "HOME"))
-  (setq command-line-default-directory (getenv "HOME")))
+(if (daemonp)
+    (progn
+      (cd (getenv "HOME"))
+      (setq default-directory (getenv "HOME"))
+      (setq command-line-default-directory (getenv "HOME"))))
 
 (setenv "USER" "3le")
 (setenv "HOST" "msi")

@@ -8,9 +8,6 @@
 	email = ismaeledegiorgi@gmail.com
 [credential]
 	helper = manager-core
-[core]
-	; editor = \"C:/Program Files (x86)/GitExtensions/GitExtensions.exe\" fileeditor
-	fsmonitor = true
 [pull]
 	rebase = false
 [fetch]
