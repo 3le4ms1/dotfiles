@@ -9,37 +9,36 @@
 
 ;;; Code:
 
-(global-set-key (kbd "C-+") 'text-scale-increase)
-(global-set-key (kbd "C--") 'text-scale-decrease)
-(global-set-key (kbd "C-0") 'text-scale-adjust)
-(global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
-(global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
+(global-set-key (kbd "C-+")             #'text-scale-increase)
+(global-set-key (kbd "C--")             #'text-scale-decrease)
+(global-set-key (kbd "C-0")             #'text-scale-adjust)
+(global-set-key (kbd "<C-wheel-up>")    #'text-scale-increase)
+(global-set-key (kbd "<C-wheel-down>")  #'text-scale-decrease)
 
 ;; (global-set-key (kbd "C-x b") 'ibuffer)
-(global-set-key (kbd "C-S-a") 'mark-whole-buffer)
+(global-set-key (kbd "C-S-a") #'mark-whole-buffer)
 
 ;; (global-set-key (kbd "C-<tab>") 'next-buffer)
 ;; (global-set-key (kbd "C-S-<tab>") 'previous-buffer)
 
-(global-set-key (kbd "C-ù") 'comment-line)
+(global-set-key (kbd "C-ù") #'comment-line)
 
 (global-set-key (kbd "C-<return>") (kbd "M-j"))
 
-(global-set-key "\C-x2" (lambda () (interactive) (split-window-vertically)   (other-window 1)))
-(global-set-key "\C-x3" (lambda () (interactive) (split-window-horizontally) (other-window 1)))
+(global-set-key (kbd "C-x 2") (lambda () (interactive) (split-window-vertically)   (other-window 1)))
+(global-set-key (kbd "C-x 3") (lambda () (interactive) (split-window-horizontally) (other-window 1)))
 
-(global-set-key (kbd "C-x C-b") 'bs-show)
-
-(global-set-key (kbd "C-c C-<SPC>") 'company-complete)
+(global-set-key (kbd "C-x C-b") #'bs-show)
 
 (global-set-key (kbd "C-S-d") (lambda ()
                                 (interactive)
-                                (move-beginning-of-line 1)
-                                (kill-line)
-                                (yank)
-                                (open-line 1)
-                                (forward-line 1)
-                                (yank)))
+                                (progn
+                                  (move-beginning-of-line 1)
+                                  (kill-line)
+                                  (yank)
+                                  (open-line 1)
+                                  (forward-line 1)
+                                  (yank))))
 
 ;; =# Inserimento caratteri `{' e `}'
 (global-set-key (kbd "C-M-*") (lambda ()

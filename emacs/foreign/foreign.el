@@ -4,10 +4,10 @@
 ;;; Configurazione dei vari repository con packages vari.
 ;;; I vari packages esterni sono contenuti nella variabile `foreign-packages',
 ;;; secondo il seguente formato:
-;;; `(package-name package-init-file package-repo-link)'
-;;; La funzione `3le/check-dir-exists' prende tutta la lista che descrive un
-;;; package (quella sopra), e fa il controllo per vedere se è già scaricata. Se
-;;; non è presente, la scarica, e la carica
+;;; `(package-name package-init-file.el package-repo-link)'
+;;; La funzione `3le/foreign-package-manager' prende tutta la lista che descrive
+;;; un package (quella sopra), e fa il controllo per vedere se è già scaricata.
+;;; Se non è presente, la scarica, e la carica
 
 ;;; Code:
 
@@ -17,7 +17,7 @@
                          ("old-ada-mode" "ada-mode.el"   "https://github.com/tkurtbond/old-ada-mode.git")
                          ))
 
-(defun 3le/check-dir-exists (package)
+(defun 3le/foreign-package-manager (package)
   "Automatic download and load of PACKAGE."
   (progn
     ;; (unless cond) == (if (not (cond)))
@@ -28,7 +28,7 @@
     (load (concat 3le/emacs-conf-dir "/foreign/"
                   (car package) "/" (car (cdr package))))))
 
-(mapc #'3le/check-dir-exists 3le/foreign-packages)
+(mapc #'3le/foreign-package-manager 3le/foreign-packages)
 
 ;; fasm-mode
 ;; https://github.com/the-little-language-designer/fasm-mode.git
@@ -37,6 +37,9 @@
 ;; https://github.com/rexim/simpc-mode.git
 (add-to-list 'auto-mode-alist '("\\.c$" . simpc-mode))
 (add-to-list 'auto-mode-alist '("\\.h$" . simpc-mode))
+
+(add-hook 'simpc-mode-hook (lambda ()
+                             (local-set-key (kbd "RET") 'reindent-then-newline-and-indent)))
 
 ;; old-ada-mode
 ;; https://github.com/tkurtbond/old-ada-mode.git
