@@ -119,14 +119,14 @@ fi
 # Configurazione di 3le
 # MOTD
 MOTDS=( "(* - *)" "(-///-)" "(o///o)" ":3" "( ^ - ^)" "(* ^ *)" "(+ - +)"
-        "(+ = +)" "(@ - @)")
+        "(+ = +)" "(@ - @)" "(< . <)" "(> _ >)")
 echo ${MOTDS[$(( $RANDOM % ${#MOTDS[@]} ))]}
 
 alias cls='clear'
 alias main="./main"
 alias emacs="/mnt/c/tools/bin/emacs.exe"
 
-export WINHOME="/mnt/c/Users/ismae/Documents/HOME"
+export WINHOME="/mnt/c/Users/"$USER"/Documents/HOME"
 export XDG_CONFIG_HOME="~/.config"
 
 # Graphics
