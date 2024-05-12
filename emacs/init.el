@@ -1,21 +1,21 @@
-﻿;;; init.el --- Configurazione emacs di 3le
+﻿;;; init.el --- Configurazione emacs di 3le4ms1
 
 ;;; Commentary:
-;; Emacs configuration made by 3le
+;; Emacs configuration made by 3le4ms1
 
 ;;; Code:
 
 ;;=# File loading
-(defvar 3le/emacs-conf-dir (concat (getenv "XDG_CONFIG_HOME") "/emacs"))
+(defvar 3le4ms1/emacs-conf-dir (concat (getenv "XDG_CONFIG_HOME") "/emacs"))
 
-;; (load (concat 3le/emacs-conf-dir "/debug.el"))
-(load (concat 3le/emacs-conf-dir "/foreign/foreign.el"))
-(load (concat 3le/emacs-conf-dir "/package.el"))
+;; (load (concat 3le4ms1/emacs-conf-dir "/debug.el"))
+(load (concat 3le4ms1/emacs-conf-dir "/foreign/foreign.el"))
+(load (concat 3le4ms1/emacs-conf-dir "/package.el"))
 
-(mapc #'load (file-expand-wildcards (concat 3le/emacs-conf-dir "/local/*.el")))
-(mapc #'load (file-expand-wildcards (concat 3le/emacs-conf-dir "/config/*.el")))
-(mapc #'load (file-expand-wildcards (concat 3le/emacs-conf-dir "/standalone/*.el")))
-(mapc #'load (file-expand-wildcards (concat 3le/emacs-conf-dir "/package-conf/*.el")))
+(mapc #'load (file-expand-wildcards (concat 3le4ms1/emacs-conf-dir "/local/*.el")))
+(mapc #'load (file-expand-wildcards (concat 3le4ms1/emacs-conf-dir "/config/*.el")))
+(mapc #'load (file-expand-wildcards (concat 3le4ms1/emacs-conf-dir "/standalone/*.el")))
+(mapc #'load (file-expand-wildcards (concat 3le4ms1/emacs-conf-dir "/package-conf/*.el")))
 
 ;; =# Parte auto gestita da Emacs
 (custom-set-variables

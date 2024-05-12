@@ -40,7 +40,7 @@
       (setq default-directory (getenv "HOME"))
       (setq command-line-default-directory (getenv "HOME"))))
 
-(setenv "USER" "3le")
+(setenv "USER" "3le4ms1")
 (setenv "HOST" "msi")
 (setenv "LANG" "it_IT,en_US")
 (set-language-environment 'utf-8)

@@ -376,7 +376,7 @@ key_bindings:
   - { key: LBracket, mods: Command,       chars: "\x02;"                       }  # select last (previously used) pane
   - { key: F,        mods: Command,       chars: "\x02/"                       }  # search (upwards) (see tmux.conf)
 
-  # Custom 3le bindings
+  # Custom 3le4ms1 bindings
   - { key: P,        mods: Control,       action: ScrollLineUp                 }
   - { key: N,        mods: Control,       action: ScrollLineDown               }
   - { key: Back,     mods: Control,       chars: "\u0017"                      }

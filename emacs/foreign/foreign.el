@@ -5,30 +5,30 @@
 ;;; I vari packages esterni sono contenuti nella variabile `foreign-packages',
 ;;; secondo il seguente formato:
 ;;; `(package-name package-init-file.el package-repo-link)'
-;;; La funzione `3le/foreign-package-manager' prende tutta la lista che descrive
+;;; La funzione `3le4ms1/foreign-package-manager' prende tutta la lista che descrive
 ;;; un package (quella sopra), e fa il controllo per vedere se è già scaricata.
 ;;; Se non è presente, la scarica, e la carica
 
 ;;; Code:
 
-(defvar 3le/foreign-packages '(
-                         ("fasm-mode"    "fasm-mode.el"  "https://github.com/the-little-language-designer/fasm-mode.git")
-                         ("simpc-mode"   "simpc-mode.el" "https://github.com/rexim/simpc-mode.git")
-                         ("old-ada-mode" "ada-mode.el"   "https://github.com/tkurtbond/old-ada-mode.git")
-                         ))
+(defvar 3le4ms1/foreign-packages '(
+                                   ("fasm-mode"    "fasm-mode.el"  "https://github.com/the-little-language-designer/fasm-mode.git")
+                                   ("simpc-mode"   "simpc-mode.el" "https://github.com/rexim/simpc-mode.git")
+                                   ("old-ada-mode" "ada-mode.el"   "https://github.com/tkurtbond/old-ada-mode.git")
+                                   ))
 
-(defun 3le/foreign-package-manager (package)
+(defun 3le4ms1/foreign-package-manager (package)
   "Automatic download and load of PACKAGE."
   (progn
     ;; (unless cond) == (if (not (cond)))
     ;; check per la directory del package
-    (unless (file-exists-p (concat 3le/emacs-conf-dir "/foreign/" (car package)))
+    (unless (file-exists-p (concat 3le4ms1/emacs-conf-dir "/foreign/" (car package)))
       (shell-command (concat "git clone --depth=1 " (car (cdr (cdr package))) " "
-                             3le/emacs-conf-dir "/foreign/" (car package))))
-    (load (concat 3le/emacs-conf-dir "/foreign/"
+                             3le4ms1/emacs-conf-dir "/foreign/repos/" (car package))))
+    (load (concat 3le4ms1/emacs-conf-dir "/foreign/repos/"
                   (car package) "/" (car (cdr package))))))
 
-(mapc #'3le/foreign-package-manager 3le/foreign-packages)
+(mapc #'3le4ms1/foreign-package-manager 3le4ms1/foreign-packages)
 
 ;; fasm-mode
 ;; https://github.com/the-little-language-designer/fasm-mode.git
