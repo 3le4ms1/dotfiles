@@ -1,14 +1,19 @@
 *.log
 *.xopp
 
-# Non useful
+# History files
 /bash/.bash_history
+/ghci/ghci_history
+
+# Non useful
 /Godot/
 /komorebi/
 /nvim/
 /pychess/
 /xournalpp/metadata/
 /xournalpp/autosave/
+/scoop/
+/mypaint/
 
 # Games
 /CassetteBeasts/

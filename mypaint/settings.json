@@ -79,7 +79,7 @@
             ]
           ],
           "active_page": 0,
-          "w": 457,
+          "w": 347,
           "h": 437
         },
         {
@@ -96,7 +96,7 @@
             ]
           ],
           "active_page": 2,
-          "w": 457,
+          "w": 347,
           "h": 305
         },
         {
@@ -104,7 +104,7 @@
           "active_page": -1
         }
       ],
-      "w": 457,
+      "w": 347,
       "h": 886
     },
     "floating": [],
@@ -458,11 +458,11 @@
   "ui.file_compat_warning_mild": true,
   "ui.file_compat_warning_severe": true,
   "colors.history": [
-    "#44aa66",
-    "#9daa44",
-    "#fce820",
     "#8b832d",
-    "#24e35b"
+    "#23e35b",
+    "#23e35b",
+    "#23e35b",
+    "#23e35b"
   ],
   "brush_chooser.default.window_size": [
     256,

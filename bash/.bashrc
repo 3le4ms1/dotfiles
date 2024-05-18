@@ -116,6 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Haskell
+[ -f "/c/haskell/ghcup/env" ] && . "/c/haskell/ghcup/env" # ghcup-env
+
 # Configurazione di 3le
 # MOTD
 MOTDS=( "(* - *)" "(-///-)" "(o///o)" ":3" "( ^ - ^)" "(* ^ *)" "(+ - +)"

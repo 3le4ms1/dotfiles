@@ -11,6 +11,7 @@
 
 ;;; Code:
 
+;;; Format: `(package-name package-init-file.el package-repo-link)'
 (defvar 3le4ms1/foreign-packages '(
                                    ("fasm-mode"    "fasm-mode.el"  "https://github.com/the-little-language-designer/fasm-mode.git")
                                    ("simpc-mode"   "simpc-mode.el" "https://github.com/rexim/simpc-mode.git")
@@ -19,14 +20,17 @@
 
 (defun 3le4ms1/foreign-package-manager (package)
   "Automatic download and load of PACKAGE."
-  (progn
-    ;; (unless cond) == (if (not (cond)))
-    ;; check per la directory del package
-    (unless (file-exists-p (concat 3le4ms1/emacs-conf-dir "/foreign/" (car package)))
-      (shell-command (concat "git clone --depth=1 " (car (cdr (cdr package))) " "
-                             3le4ms1/emacs-conf-dir "/foreign/repos/" (car package))))
-    (load (concat 3le4ms1/emacs-conf-dir "/foreign/repos/"
-                  (car package) "/" (car (cdr package))))))
+  (let ((file (concat 3le4ms1/emacs-conf-dir "/foreign/repos/"
+                      (car package) "/" (car (cdr package)))))
+    (progn
+      ;; (unless cond) == (if (not (cond)))
+      ;; check per la directory del package
+      (unless (file-exists-p (concat 3le4ms1/emacs-conf-dir "/foreign/" (car package)))
+        (shell-command (concat "git clone --depth=1 " (car (cdr (cdr package))) " "
+                               3le4ms1/emacs-conf-dir "/foreign/repos/" (car package))))
+      ;; (when cond) == (if cond) senza else branch
+      (when (file-exists-p file)
+        (load file)))))
 
 (mapc #'3le4ms1/foreign-package-manager 3le4ms1/foreign-packages)
 

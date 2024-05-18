@@ -45,6 +45,9 @@ Set-Alias rm rm.exe
 Remove-Item Alias:kill
 Set-Alias kill kill.exe
 
+Remove-Item -Force Alias:cpp
+Set-Alias cpp cpp.exe
+
 # Remove-Item Alias:curl
 
 # Remove-Item Alias:find

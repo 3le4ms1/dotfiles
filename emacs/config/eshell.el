@@ -32,7 +32,8 @@
 (setq 3le4ms1/eshell-aliases
       '((cls  . eshell/clear-scrollback)
         (open . find-file)
-        (ll   . (lambda () (eshell/ls '-la)))))
+        (ll   . (lambda () (eshell/ls '-la)))
+        (esf  . eshell-source-file)))
 
 (mapc (lambda (alias)
         (defalias (car alias) (cdr alias)))
