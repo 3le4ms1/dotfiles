@@ -56,8 +56,14 @@
  'org-babel-load-languages
  '((awk . t)
    (gnuplot . t)))
-;; Agenda
 
-;; (setq org-agenda-files "~/org-agenda")
+;; Agenda
+(setq org-agenda-files (concat (getenv "HOME") "/org/org-agenda/agenda-files.txt"))
+
+;; keys
+(define-key org-mode-map (kbd "C-,") #'org-shiftright)
+(define-key org-mode-map (kbd "C-;") #'org-shiftleft)
+(define-key org-mode-map (kbd "M-,") #'org-shiftdown)
+(define-key org-mode-map (kbd "M-;") #'org-shiftup)
 
 ;;; org-mode.el ends here.

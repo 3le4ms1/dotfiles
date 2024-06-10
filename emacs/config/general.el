@@ -30,8 +30,9 @@
 ;; (display-time-mode 1)
 
 ;;=# add-hook
-(add-hook 'text-mode-hook #'auto-fill-mode)
+;; (add-hook 'text-mode-hook #'auto-fill-mode)
 (add-hook 'prog-mode-hook #'auto-fill-mode)
+(add-hook 'org-mode-hook #'auto-fill-mode)
 
 ;;=# set
 (if (daemonp)
@@ -66,6 +67,7 @@
 (setq make-backup-files nil)
 
 (setq-default fill-column 80)
+;; (global-display-fill-column-indicator-mode)
 
 (setq display-time-format "%H:%M")
 

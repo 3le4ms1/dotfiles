@@ -1,4 +1,4 @@
-;;; _foreign.el --- Configurazione dei file in repos esterni
+;;; foreign.el --- Configurazione dei file in repos esterni
 
 ;;; Commentary:
 ;;; Configurazione dei vari repository con packages vari.
@@ -21,14 +21,16 @@
 (defun 3le4ms1/foreign-package-manager (package)
   "Automatic download and load of PACKAGE."
   (let ((file (concat 3le4ms1/emacs-conf-dir "/foreign/repos/"
-                      (car package) "/" (car (cdr package)))))
+                      (car package) "/" (nth 1 package))))
     (progn
       ;; (unless cond) == (if (not (cond)))
       ;; check per la directory del package
-      (unless (file-exists-p (concat 3le4ms1/emacs-conf-dir "/foreign/" (car package)))
-        (shell-command (concat "git clone --depth=1 " (car (cdr (cdr package))) " "
+      (unless (file-exists-p file)
+        (shell-command (concat "git clone --depth=1 " (nth 2 package) " "
                                3le4ms1/emacs-conf-dir "/foreign/repos/" (car package))))
       ;; (when cond) == (if cond) senza else branch
+      ;; check necessario se non riesce ad installare il package (ex: in caso di
+      ;; assenza di connessione ad internet)
       (when (file-exists-p file)
         (load file)))))
 

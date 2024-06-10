@@ -30,6 +30,8 @@
 
 (global-set-key (kbd "C-x C-b") #'bs-show)
 
+(global-set-key (kbd "C-c a") #'org-agenda)
+
 (global-set-key (kbd "C-S-d") (lambda ()
                                 (interactive)
                                 (progn
