@@ -22,6 +22,8 @@
 ;; (global-set-key (kbd "C-S-<tab>") 'previous-buffer)
 
 (global-set-key (kbd "C-ù") #'comment-line)
+;; ansi-us layout compatibility
+(global-set-key (kbd "C-\\") #'comment-line)
 
 (global-set-key (kbd "C-<return>") (kbd "M-j"))
 
@@ -42,7 +44,7 @@
                                   (forward-line 1)
                                   (yank))))
 
-;; =# Inserimento caratteri `{' e `}'
+;; =# Inserimento caratteri `{' e `}' in layout italiano
 (global-set-key (kbd "C-M-*") (lambda ()
                   (interactive)
                   (insert-char #x7d)))
