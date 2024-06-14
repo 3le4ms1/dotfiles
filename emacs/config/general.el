@@ -30,8 +30,8 @@
 ;; (display-time-mode 1)
 
 ;;=# add-hook
-;; (add-hook 'text-mode-hook #'auto-fill-mode)
-(add-hook 'prog-mode-hook #'auto-fill-mode)
+(add-hook 'text-mode-hook #'auto-fill-mode)
+;; (add-hook 'prog-mode-hook #'auto-fill-mode)
 (add-hook 'org-mode-hook #'auto-fill-mode)
 
 ;;=# set
@@ -108,7 +108,7 @@
           )
 
 (eval-after-load "dired" '(progn
-                            (define-key dired-mode-map (kbd "*") 'dired-create-empty-file)))
+                            (define-key dired-mode-map (kbd "-") 'dired-create-empty-file)))
 
 ;;=# indent
 (define-key global-map (kbd "RET") 'newline-and-indent)

@@ -128,6 +128,7 @@ echo ${MOTDS[$(( $RANDOM % ${#MOTDS[@]} ))]}
 alias cls='clear'
 alias main="./main"
 alias emacs="/mnt/c/tools/bin/emacs.exe"
+alias tm='tmux'
 
 export WINHOME="/mnt/c/Users/"$USER"/Documents/HOME"
 export XDG_CONFIG_HOME="~/.config"
