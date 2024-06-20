@@ -30,10 +30,11 @@
 (setq eshell-prompt-regexp "^[^𝛌]+ 𝛌 ")
 
 (setq 3le4ms1/eshell-aliases
-      '((cls  . eshell/clear-scrollback)
-        (open . find-file)
-        (ll   . (lambda () (eshell/ls '-la)))
-        (esf  . eshell-source-file)))
+      '((cls    . eshell/clear-scrollback)
+        (open   . find-file)
+        (ll     . (lambda () (eshell/ls '-la)))
+        (esf    . eshell-source-file)
+        (falias . eshell-find-alias-function)))
 
 (mapc (lambda (alias)
         (defalias (car alias) (cdr alias)))

@@ -61,9 +61,9 @@
 (setq org-agenda-files (concat (getenv "HOME") "/org/org-agenda/agenda-files.txt"))
 
 ;; keys
-(define-key org-mode-map (kbd "C-,") #'org-shiftright)
-(define-key org-mode-map (kbd "C-;") #'org-shiftleft)
-(define-key org-mode-map (kbd "M-,") #'org-shiftdown)
-(define-key org-mode-map (kbd "M-;") #'org-shiftup)
+(define-key org-mode-map (kbd "C-;") #'org-shiftup)
+(define-key org-mode-map (kbd "C-,") #'org-shiftdown)
+(define-key org-mode-map (kbd "C-.") #'org-shiftright)
+(define-key org-mode-map (kbd "C-:") #'org-shiftleft)
 
 ;;; org-mode.el ends here.
