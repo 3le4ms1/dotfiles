@@ -232,7 +232,7 @@
       "KC_VOLU",
       "KC_MUTE",
       "KC_NO",
-      "KC_NO",
+      "KC_PSCR",
       "RGB_MOD",
       "RGB_TOG",
       "RGB_MOD",
@@ -257,7 +257,7 @@
       "KC_TRNS",
       "KC_TRNS",
       "KC_UP",
-      "KC_PSCR",
+      "KC_NO",
       "KC_PGDN",
       "KC_END",
       "KC_NO",
@@ -289,7 +289,7 @@
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
-      "KC_TRNS"
+      "KC_RCTL"
     ],
     [
       "S(KC_GRV)",

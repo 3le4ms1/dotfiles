@@ -104,8 +104,7 @@
           (lambda ()
             "Move up a directory."
             (define-key dired-mode-map (kbd "^")
-              (lambda () (interactive) (find-alternate-file ".."))))
-          )
+              (lambda () (interactive) (find-alternate-file "..")))))
 
 (eval-after-load "dired" '(progn
                             (define-key dired-mode-map (kbd "-") 'dired-create-empty-file)))

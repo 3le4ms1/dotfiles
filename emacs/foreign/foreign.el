@@ -16,6 +16,7 @@
                                    ("fasm-mode"    "fasm-mode.el"  "https://github.com/the-little-language-designer/fasm-mode.git")
                                    ("simpc-mode"   "simpc-mode.el" "https://github.com/rexim/simpc-mode.git")
                                    ("old-ada-mode" "ada-mode.el"   "https://github.com/tkurtbond/old-ada-mode.git")
+                                   ("Emacs-D-Mode" "d-mode.el"     "https://github.com/Emacs-D-Mode-Maintainers/Emacs-D-Mode.git")
                                    ))
 
 (defun 3le4ms1/foreign-package-manager (package)

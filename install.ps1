@@ -1,5 +1,6 @@
 param([switch]$Elevated)
 $local:ErrorActionPreference = "Stop"
+Set-Strictmode -Version Latest
 
 function install-write {
     [OutputType([void])]
@@ -45,13 +46,11 @@ function create_link {
 }
 
 $script:scriptdir = $(resolve-path $PSScriptRoot)
-$script:usrhome = $(resolve-path $script:scriptdir\..)
-
-# echo $script:scriptdir.toString()
-# echo $script:usrhome.toString()
-# echo $(resolve-path $env:userprofile).Path
+$script:usrhome = $(resolve-path "$script:scriptdir/..")
+$script:startup_folder = $(resolve-path "$env:USERPROFILE/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup")
 
 create_link "emacs"      "$script:scriptdir/emacs/init.el" "$script:usrhome/.emacs"
+create_link "emacs"      "$script:scriptdir/emacs/emacs_startup.cmd" "$script:startup_folder/emacs_startup.cmd"
 create_link "bash"       "$script:scriptdir/bash/.bashrc" "$script:usrhome/.bashrc"
 create_link "bash"       "$script:scriptdir/bash/.bash_profile" "$script:usrhome/.bash_profile"
 create_link "mintty"     "$script:scriptdir/bash/.minttyrc" "$script:usrhome/.minttyrc"
