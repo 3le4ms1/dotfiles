@@ -1,0 +1,10 @@
+$noop( script per le OST )
+
+$noop($set(something,1))
+
+$set(title,
+	$if(%album%,%album% - ,)
+	%title%
+)
+
+%title%

@@ -1,0 +1,8 @@
+$noop( Script per i file ASMR  NSFW)
+
+$set(title, 
+	$if(%artist%,%artist% NSFW - ,)
+	%title%
+)
+
+%title%

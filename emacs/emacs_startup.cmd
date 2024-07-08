@@ -4,6 +4,6 @@ rem https://stackoverflow.com/questions/19047442/my-batch-file-keeps-looping-but
 
 where /q runemacs
 if %errorlevel% equ 0 (
-    runemacs --daemon >nul 2>&1
+    start /B runemacs --daemon >nul 2>&1
 )
 exit 0
