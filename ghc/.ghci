@@ -1,3 +1,5 @@
-:set prompt "λ> "
+:set +m
+:set +s
+:set +t
 :set -XOverloadedStrings
 :set editor emacs

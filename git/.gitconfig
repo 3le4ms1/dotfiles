@@ -16,3 +16,5 @@
 	autoStash = false
 	autosquash = false
 	updateRefs = false
+[core]
+	fsmonitor = true

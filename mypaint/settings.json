@@ -39,7 +39,7 @@
   "ui.dark_theme_variant": true,
   "ui.rendered_tile_cache_size": 16384,
   "saving.default_format": "openraster",
-  "brushmanager.selected_brush": "ramon/Delayed_",
+  "brushmanager.selected_brush": "ramon/100%_Opaque",
   "brushmanager.selected_groups": [],
   "frame.color_rgba": [
     0.12,
@@ -69,22 +69,6 @@
         {
           "tools": [
             [
-              "MyPaintModeOptionsTool"
-            ],
-            [
-              "MyPaintLayersTool"
-            ],
-            [
-              "MyPaintPreviewTool"
-            ]
-          ],
-          "active_page": 0,
-          "w": 347,
-          "h": 437
-        },
-        {
-          "tools": [
-            [
               "MyPaintPaletteTool"
             ],
             [
@@ -96,20 +80,40 @@
             ]
           ],
           "active_page": 2,
-          "w": 347,
-          "h": 305
+          "w": 385,
+          "h": 237
+        },
+        {
+          "tools": [
+            [
+              "MyPaintLayersTool"
+            ]
+          ],
+          "active_page": 0,
+          "w": 385,
+          "h": 412
+        },
+        {
+          "tools": [
+            [
+              "MyPaintModeOptionsTool"
+            ]
+          ],
+          "active_page": 0,
+          "w": 385,
+          "h": 437
         },
         {
           "tools": [],
           "active_page": -1
         }
       ],
-      "w": 347,
-      "h": 886
+      "w": 385,
+      "h": 1103
     },
     "floating": [],
     "position": {},
-    "autohide": false,
+    "autohide": true,
     "fullscreen": false,
     "maximized": true
   },
@@ -138,7 +142,7 @@
   "input.devices": {
     "System Aggregated Pointer:mouse:2": {}
   },
-  "colors.current": "#24e35b",
+  "colors.current": "#17808c",
   "colors.palette": {
     "name": "MyPaint Default",
     "columns": 7,
@@ -458,11 +462,11 @@
   "ui.file_compat_warning_mild": true,
   "ui.file_compat_warning_severe": true,
   "colors.history": [
-    "#8b832d",
-    "#23e35b",
-    "#23e35b",
-    "#23e35b",
-    "#23e35b"
+    "#008c95",
+    "#a52a2a",
+    "#177f8c",
+    "#177f8c",
+    "#177f8c"
   ],
   "brush_chooser.default.window_size": [
     256,
@@ -473,5 +477,11 @@
     282,
     322
   ],
-  "color_chooser.fast_subset.selected_adjuster": "PaletteTool"
+  "color_chooser.fast_subset.selected_adjuster": "PaletteTool",
+  "preview.show_viewfinder": true,
+  "color_chooser.default.window_size": [
+    282,
+    322
+  ],
+  "color_chooser.default.selected_adjuster": "WashColorChangerTool"
 }

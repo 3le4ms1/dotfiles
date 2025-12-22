@@ -1,4 +1,4 @@
-live_config_reload = true
+general.live_config_reload = true
 # vim = "nospell"
 
 [bell]
@@ -21,7 +21,8 @@ print_events = false
 render_timer = false
 
 [env]
-TERM = "alacritty"
+# TERM = "alacritty"
+TERM = "xterm-256color"
 
 [font]
 size = 16.0
@@ -54,19 +55,35 @@ chars = "}"
 key = "}"
 mods = "Alt"
 
+# https://alacritty.org/config-alacritty.html#s90
+[[keyboard.bindings]]
+action = "SearchForward"
+key = "S"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "SearchBackward"
+key = "R"
+mods = "Control"
+
 [[keyboard.bindings]]
 action = "Paste"
-key = "V"
-mods = "Control|Shift"
+key = "Y"
+mods = "Control"
 
 [[keyboard.bindings]]
 action = "Copy"
-key = "C"
-mods = "Control|Shift"
+key = "W"
+mods = "Alt"
 
 [[keyboard.bindings]]
 action = "Quit"
 key = "Q"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u0003"
+key = "C"
 mods = "Control"
 
 [[keyboard.bindings]]
@@ -383,7 +400,7 @@ multiplier = 3
 save_to_clipboard = true
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 
-[shell]
+[terminal.shell]
 program = "pwsh"
 
 [window]

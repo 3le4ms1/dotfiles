@@ -5,7 +5,7 @@
   <property name="minimumPressure" value="0.05000000"/>
   <property name="pressureMultiplier" value="1.00000000"/>
   <property name="zoomGesturesEnabled" value="true"/>
-  <property name="selectedToolbar" value="Portrait"/>
+  <property name="selectedToolbar" value="Right hand Note Taking Copy"/>
   <property name="lastSavePath" value="C:\Users\ismae\Documents\HOME\Uni\Ripetizioni\Statistica\xopp"/>
   <property name="lastOpenPath" value="C:\Users\ismae\Documents\HOME\Uni\Appunti\Fondamenti\org\xopp"/>
   <property name="lastImagePath" value=""/>
@@ -26,12 +26,12 @@
   <property name="numColumns" value="1"/>
   <property name="numRows" value="1"/>
   <property name="viewFixedRows" value="false"/>
-  <property name="showPairedPages" value="false"/>
+  <property name="showPairedPages" value="true"/>
   <property name="layoutVertical" value="false"/>
   <property name="layoutRightToLeft" value="false"/>
   <property name="layoutBottomToTop" value="false"/>
   <property name="numPairsOffset" value="0"/>
-  <property name="presentationMode" value="true"/>
+  <property name="presentationMode" value="false"/>
   <!--Which gui elements are hidden if you are in Fullscreen mode, separated by a colon (,)-->
   <property name="fullscreenHideElements" value="mainMenubar"/>
   <!--Which gui elements are hidden if you are in Presentation mode, separated by a colon (,)-->
@@ -43,7 +43,7 @@
   <property name="cursorHighlightBorderColor" value="2147483903"/>
   <property name="cursorHighlightRadius" value="30.00000000"/>
   <property name="cursorHighlightBorderWidth" value="0.00000000"/>
-  <property name="darkTheme" value="false"/>
+  <property name="darkTheme" value="true"/>
   <property name="useStockIcons" value="false"/>
   <property name="disableScrollbarFadeout" value="false"/>
   <!--Hides scroolbars in the main window, allowed values: "none", "horizontal", "vertical", "both"-->
@@ -59,15 +59,15 @@
   <property name="addVerticalSpaceAmount" value="150"/>
   <property name="drawDirModsEnabled" value="false"/>
   <property name="drawDirModsRadius" value="50"/>
-  <property name="snapRotation" value="false"/>
+  <property name="snapRotation" value="true"/>
   <property name="snapRotationTolerance" value="0.30000000"/>
-  <property name="snapGrid" value="false"/>
+  <property name="snapGrid" value="true"/>
   <property name="snapGridTolerance" value="0.50000000"/>
   <property name="snapGridSize" value="14.17000000"/>
   <property name="touchDrawing" value="false"/>
   <property name="pressureGuessing" value="false"/>
   <property name="selectionBorderColor" value="4294901760"/>
-  <property name="backgroundColor" value="4292664021"/>
+  <property name="backgroundColor" value="4280557361"/>
   <property name="selectionMarkerColor" value="4285702095"/>
   <property name="touchZoomStartThreshold" value="0.00000000"/>
   <property name="pageRerenderThreshold" value="5.00000000"/>
@@ -163,9 +163,29 @@
       <attribute name="deviceClass" type="int" value="1"/>
       <attribute name="deviceSource" type="int" value="0"/>
     </data>
+    <data name="hanvonugee ugee device Eraser">
+      <attribute name="deviceClass" type="int" value="3"/>
+      <attribute name="deviceSource" type="int" value="2"/>
+    </data>
+    <data name="hanvonugee ugee device Pen stylus">
+      <attribute name="deviceClass" type="int" value="2"/>
+      <attribute name="deviceSource" type="int" value="1"/>
+    </data>
+  </data>
+  <data name="lastUsedPageBgColor">
+    <attribute name="color00" type="hex" value="fffabebe"/>
+    <attribute name="color01" type="hex" value="fffcfcfc"/>
+    <attribute name="color02" type="hex" value="ff282a36"/>
+    <attribute name="color03" type="hex" value="ffffffff"/>
+    <attribute name="color04" type="hex" value="ffffffff"/>
+    <attribute name="color05" type="hex" value="ffffffff"/>
+    <attribute name="color06" type="hex" value="ffffffff"/>
+    <attribute name="color07" type="hex" value="ffffffff"/>
+    <attribute name="color08" type="hex" value="ffffffff"/>
+    <attribute name="count" type="int" value="9"/>
   </data>
   <data name="tools">
-    <attribute name="current" type="string" value="pen"/>
+    <attribute name="current" type="string" value="hand"/>
     <data name="drawArrow">
       <attribute name="drawingType" type="string" value="default"/>
     </data>
@@ -184,13 +204,13 @@
     <data name="eraser">
       <attribute name="drawingType" type="string" value="default"/>
       <attribute name="size" type="string" value="THIN"/>
-      <attribute name="type" type="string" value="default"/>
+      <attribute name="type" type="string" value="deleteStroke"/>
     </data>
     <data name="hand">
       <attribute name="drawingType" type="string" value="default"/>
     </data>
     <data name="highlighter">
-      <attribute name="color" type="hex" value="ffffff"/>
+      <attribute name="color" type="hex" value="ffff00"/>
       <attribute name="drawingType" type="string" value="default"/>
       <attribute name="fill" type="int" value="0"/>
       <attribute name="fillAlpha" type="int" value="128"/>
