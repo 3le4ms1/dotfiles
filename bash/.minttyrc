@@ -1,10 +1,12 @@
-ThemeFile=dracula
+ThemeFile=tender
 Term=xterm-256color
 BellType=0
 Transparency=medium
-Font=Iosevka NF
-FontHeight=14
+Font=Iosevka Extended
+FontHeight=18
 FontSmoothing=full
 BoldAsFont=yes
 Locale=IT_it.utf-8
 Charset=UTF-8
+Printer=Microsoft Print to PDF
+CursorType=block

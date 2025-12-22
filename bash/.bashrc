@@ -56,10 +56,16 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+Purple='\033[0;35m'       # Purple
+[[ -z $COMPUTERNAME ]] && COMPUTERNAME='\h'
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    # default debian prompt
+    # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+    export PS1="\[${Purple}\]$MSYSTEM\[\e[31m\][\[\e[m\]\[\e[38;5;172m\]\u\[\e[m\]@\[\e[38;5;153m\]$COMPUTERNAME\[\e[m\] \[\e[38;5;214m\]\W\[\e[m\]\[\e[31m\]]\[\e[m\]\\$ "
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    # default debian prompt
+    PS1='${debian_chroot:+($debian_chroot)}\u@$COMPUTERNAME:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -88,7 +94,7 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -lahF'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -116,25 +122,59 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Haskell
-[ -f "/c/haskell/ghcup/env" ] && . "/c/haskell/ghcup/env" # ghcup-env
-
 # Configurazione di 3le
+
+# prompt
+# export PS1="\[\e[1m\][\[\e[m\]\[\e[38;5;172m\]\u\[\e[m\]@\[\e[38;5;153m\]\h\[\e[m\] \[\e[38;5;214m\]\W\[\e[m\]\[\e[31m\]]\[\e[m\]\\$ "
+
 # MOTD
-MOTDS=( "(* - *)" "(-///-)" "(o///o)" ":3" "( ^ - ^)" "(* ^ *)" "(+ - +)"
-        "(+ = +)" "(@ - @)" "(< . <)" "(> _ >)" "(U . U)" "( u.u)" ">///<"
-        "(x . x)")
+
+MOTDS=( "(* - *)" "(-///-)" "(o///o)" ":3" "=3" "( ^ - ^)" "(* ^ *)"
+        "(+ - +)" "(+ = +)" "(@ - @)" "(< . <)" "(> _ >)" "(U . U)"
+        "( u.u)" ">///<" "(x . x)" "(x _ x)" "(x ~ x)" "(> ~ <)"
+        "(Ò _ Ó)" "(ò _ Ó)" "(ò _ ó)" "(Ò ~ Ó)" "(ò ~ Ó)" "(ò ~ ó)"
+        "(Ò///Ó)" "(ò///ó)" "(Ò ~ Ó)" "(ò ~ ó)" "(> ~ <)")
 
 echo ${MOTDS[$(( $RANDOM % ${#MOTDS[@]} ))]}
 
+export USER=$(whoami)
+
+if [[ -d /mnt/c ]]; then
+    # windows wsl compatibility
+    alias emacs='/mnt/c/ProgramData/scoop/apps/emacs/current/bin/emacs.exe'
+    [[ ! -f emacs ]] && emacs=""
+
+    export WINHOME="/mnt/c/Users/"$USER"/Documents/HOME"
+    [[ ! -d $WINHOME ]] && WINHOME=""
+
+elif [[ -d /c ]]; then
+    # windows msys2 compatibility
+    alias emacs="/c/ProgramData/scoop/apps/emacs/current/bin/emacsclient.exe -r -n -a \"\""
+    [[ ! -f emacs ]] && emacs=""
+
+    alias nvim="/c/ProgramData/scoop/apps/neovim/current/bin/nvim.exe"
+    [[ ! -f nvim ]] && nvim=""
+
+    export WINHOME="/c/Users/"$USER"/Documents/HOME"
+    [[ ! -d $WINHOME ]] && WINHOME=""
+
+    # haskell things
+    [ -f "/c/haskell/ghcup/env" ] && . "/c/haskell/ghcup/env" # ghcup-env
+
+    # Graphics for wsl
+    export DISPLAY=$(awk '/nameserver / {print $3; exit}' /etc/resolv.conf 2>/dev/null):0
+    export LIBGL_ALWAYS_INDIRECT=1
+fi
+
+alias tm='tmux'
+alias ll='ls -la'
 alias cls='clear'
 alias main="./main"
-alias emacs="/mnt/c/tools/bin/emacs.exe"
-alias tm='tmux'
+alias larth="ls -larth"
 
-export WINHOME="/mnt/c/Users/"$USER"/Documents/HOME"
-export XDG_CONFIG_HOME="~/.config"
+export XDG_CONFIG_HOME="$HOME/.config"
 
-# Graphics
-export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
-export LIBGL_ALWAYS_INDIRECT=1
+# manpager
+if [[ -f /usr/bin/nvim ]]; then
+    export MANPAGER='nvim +Man!'
+fi
