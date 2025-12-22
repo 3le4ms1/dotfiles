@@ -3,20 +3,23 @@
 *.elc
 
 # History files
-/bash/.bash_history
-/ghci/ghci_history
+bash/.bash_history
+ghc/ghci_history
+nushell/history.txt
 
 # Non useful
-/Godot/
-/komorebi/
-/nvim/
-/pychess/
-/xournalpp/metadata/
-/xournalpp/autosave/
-/scoop/
-/mypaint/
-/clojure/
+Godot/
+komorebi/
+nvim/
+pychess/
+xournalpp/
+mypaint/
+scoop/
+mypaint/
+darktable/
+mypaint/
+picard/
 
 # Games
-/CassetteBeasts/
-/YourOnlyMoveIsHUSTLE/
+CassetteBeasts/
+YourOnlyMoveIsHUSTLE/
