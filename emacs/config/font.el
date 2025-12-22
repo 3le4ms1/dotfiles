@@ -6,7 +6,8 @@
 (set-face-attribute 'default nil
                     ;; :family "Firacode NF"
                     :family "Iosevka"
-                    :height 120
+                    ;; default :height 120
+                    :height 150
                     :weight 'regular
                     :width 'regular)
 

@@ -5,16 +5,14 @@
 
 ;;; Code:
 
-;; =# Pacchetti da MELPA
-
 (require 'package)
+(package-initialize)
 (add-to-list 'package-archives '("gnu"   . "https://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(add-to-list 'package-archives '("elpa"  . "http://elpa.gnu.org/packages/") t)
-(package-initialize)
+(add-to-list 'package-archives '("elpa"  . "http://elpa.gnu.org/packages/"))
 
+(package-refresh-contents t)
 (unless (package-installed-p 'use-package)
-  (package-refresh-contents)
   (package-install 'use-package))
 (eval-and-compile
   (setq use-package-always-ensure t

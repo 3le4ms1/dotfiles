@@ -4,6 +4,6 @@
 
 ;;; Code:
 
-(setq python-indent-offset 2)
+(setq python-indent-offset 4)
 
 ;;; python.el ends here.

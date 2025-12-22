@@ -6,20 +6,22 @@
 
 ;;; Code:
 
-
 ;; https://200ok.ch/posts/2020-08-22_setting_up_spell_checking_with_multiple_dictionaries.html
 
 (use-package ispell
   :ensure t
   :config
   (when (eq system-type 'windows-nt)
-    (setq ispell-program-name "C:\\ProgramData\\chocolatey\\bin\\hunspell.exe"))
+    (setq ispell-program-name "C:\\ProgramData\\chocolatey\\bin\\hunspell.exe")
+    (setq ispell-personal-dictionary (concat (getenv "HOME") "/.ispell_personal")))
+
+  (setq ispell-alternate-dictionary ispell-personal-dictionary)
 
   ;; Controllare la variabile `ispell-dictionary-alist' per la formattazione
-  (add-to-list 'ispell-hunspell-dictionary-alist
-               '("3le4ms1/italian"
-                 "[A-Za-z]" "[^A-Za-z]" "[']" nil
-                 ("-d" "it_IT") nil utf-8))
+  ;; (add-to-list 'ispell-hunspell-dictionary-alist
+  ;;              '("3le4ms1/italian"
+  ;;                "[A-Za-z]" "[^A-Za-z]" "[']" nil
+  ;;                ("-d" "it_IT") nil utf-8))
 
   (add-to-list 'ispell-hunspell-dictionary-alist
                '("3le4ms1/italian-english"
@@ -33,7 +35,8 @@
                  '("it_IT" . "C:\\Hunspell\\it_IT.aff"))
     (add-to-list 'ispell-hunspell-dict-paths-alist
                  '("en_US" . "C:\\Hunspell\\en_US.dic"))
-    )
+    (add-to-list 'ispell-hunspell-dict-paths-alist
+                 '("en_US" . "C:\\Hunspell\\en_US.aff")))
 
   ;; (ispell-set-spellchecker-params)
 
@@ -44,5 +47,8 @@
 
   ;; (when (boundp 'ispell-hunspell-dictionary-alist)
   ;; (setq ispell-hunspell-dictionary-alist ispell-local-dictionary-alist))
-  )
+
+  (add-hook 'flyspell-mode-hook
+            (lambda () (keymap-unset flyspell-mode-map "C-," t))))
+
 ;;; ispell.el ends here.

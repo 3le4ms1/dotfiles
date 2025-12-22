@@ -1,11 +1,11 @@
-;;; package --- Funzioni custom
+;;; 3le4ms1_functions.el --- Custom functions
 
 ;;; Commentary:
 ;; Funzioni custom per usare Emacs al meglio
 
 ;;; Code:
 
-;;=# slime
+;; slime
 ;; (defun 3le4ms1/lslime ()
   ;; "Carica l'ambiente slime per Lisp."
   ;; (interactive)
@@ -21,7 +21,7 @@
   (message "Opening Alacritty in current directory")
   (call-process-shell-command "alacritty --working-directory . &" nil 0))
 
-(global-set-key (kbd "C-x a") '3le4ms1/open-alacritty-here)
+(global-set-key (kbd "C-x a") #'3le4ms1/open-alacritty-here)
 
 (defun 3le4ms1/org-browse-link ()
   "Opens the link under the cursor in the browser."
@@ -57,10 +57,10 @@
   (let* ((not-installed (seq-remove #'package-installed-p package-selected-packages))
          (unavailable (seq-filter (lambda (p) (not (assq p package-archive-contents)))
                                   not-installed)))
+
     unavailable))
 
-
-;; =# Reload della configurazione
+;; Reload della configurazione
 (defun 3le4ms1/lconf ()
   "Load the .emacs file."
   (interactive)

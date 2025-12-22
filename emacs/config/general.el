@@ -9,6 +9,9 @@
 ;; (load "server")
 ;; (unless (server-running-p) (server-start))
 
+;; FIX for window flashing
+;; (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
+
 ;; =# general
 ;; (ido-mode 1)
 (tool-bar-mode 0)
@@ -16,7 +19,7 @@
 (scroll-bar-mode 0)
 ;; (speedbar 1)
 ;; (tab-bar-mode 1)
-(global-prettify-symbols-mode +1)
+;; (global-prettify-symbols-mode +1) ;; lambda
 (global-auto-revert-mode t)
 
 (electric-pair-mode 1)
@@ -34,15 +37,16 @@
 ;; (add-hook 'prog-mode-hook #'auto-fill-mode)
 (add-hook 'org-mode-hook #'auto-fill-mode)
 
-;;=# set
+ ;;=# set
 (if (daemonp)
     (progn
       (cd (getenv "HOME"))
       (setq default-directory (getenv "HOME"))
       (setq command-line-default-directory (getenv "HOME"))))
 
+;; (when (null (getenv "USER")) (setenv "USER" "3le4ms1"))
 (setenv "USER" "3le4ms1")
-(setenv "HOST" "msi")
+(when (null (getenv "HOST")) (setenv "HOST" "adam"))
 (setenv "LANG" "it_IT,en_US")
 (set-language-environment 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -53,15 +57,17 @@
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
-(setq column-number-mode t)
+(setq custom-file (concat 3le4ms1/emacs-conf-dir "/config/emacs.custom.el"))
+
 (setq ring-bell-function 'ignore)
+(setq column-number-mode t)
 (setq-default doc-view-continuous 1)
 
 (setq package-gnupghome-dir "~/.emacs.d/elpa/gnupg/")
 
 (setq-default indent-tabs-mode nil)
-(setq-default default-tab-width 2)
-(setq-default tab-width 2)
+(setq-default default-tab-width 4)
+(setq-default tab-width 4)
 (setq-default foundamental-tab)
 
 (setq make-backup-files nil)
@@ -73,14 +79,11 @@
 
 ;; (setq backup-directory-alist '((".*" . "~/.Trash")))
 
+(setq grep-command "grep -nrH ")
+
 ;;=# put
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
-(put 'dired-find-alternate-file 'disabled nil)
-
-;;=# whitespace
-(require 'whitespace)
-(global-whitespace-mode t)
 
 (add-hook 'before-save-hook
           'delete-trailing-whitespace)
@@ -98,16 +101,6 @@
     t))
 
 (add-hook 'kill-buffer-query-functions 'kill-buffer-query-functions-maybe-bury)
-
-;;=# dired
-(add-hook 'dired-mode-hook
-          (lambda ()
-            "Move up a directory."
-            (define-key dired-mode-map (kbd "^")
-              (lambda () (interactive) (find-alternate-file "..")))))
-
-(eval-after-load "dired" '(progn
-                            (define-key dired-mode-map (kbd "-") 'dired-create-empty-file)))
 
 ;;=# indent
 (define-key global-map (kbd "RET") 'newline-and-indent)

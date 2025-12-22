@@ -14,12 +14,22 @@
 ;;; Code:
 
 ;; plist Format: `(:package-name :package-init-file :package-repo-link)'
-(defvar 3le4ms1/foreign-packages '(
-                                   (:package-name "fasm-mode"    :package-init-file "fasm-mode.el"  :package-repo-link "https://github.com/the-little-language-designer/fasm-mode.git")
-                                   (:package-name "simpc-mode"   :package-init-file "simpc-mode.el" :package-repo-link "https://github.com/rexim/simpc-mode.git")
-                                   (:package-name "old-ada-mode" :package-init-file "ada-mode.el"   :package-repo-link "https://github.com/tkurtbond/old-ada-mode.git")
-                                   (:package-name "Emacs-D-Mode" :package-init-file "d-mode.el"     :package-repo-link "https://github.com/Emacs-D-Mode-Maintainers/Emacs-D-Mode.git")
-                                   ))
+(setq 3le4ms1/foreign-packages '((:package-name "fasm-mode"
+                                                :package-init-file "fasm-mode.el"
+                                                :package-repo-link "https://github.com/the-little-language-designer/fasm-mode.git")
+                                 (:package-name "simpc-mode"
+                                                :package-init-file "simpc-mode.el"
+                                                :package-repo-link "https://github.com/rexim/simpc-mode.git")
+                                 (:package-name "old-ada-mode"
+                                                :package-init-file "ada-mode.el"
+                                                :package-repo-link "https://github.com/tkurtbond/old-ada-mode.git")
+                                 (:package-name "Emacs-D-Mode"
+                                                :package-init-file "d-mode.el"
+                                                :package-repo-link "https://github.com/Emacs-D-Mode-Maintainers/Emacs-D-Mode.git")
+                                 ;; (:package-name "emacs-nier-automata-theme"
+                                 ;;                :package-init-file "nier-automata-theme.el"
+                                 ;;                :package-repo-link "https://github.com/zOrg1331/emacs-nier-automata-theme.git")
+                                 ))
 
 (defun 3le4ms1/foreign-package-manager (package)
   "Automatic download and load of PACKAGE."
@@ -27,17 +37,22 @@
                       (plist-get package :package-name) "/"
                       (plist-get package :package-init-file))))
     (progn
-      ;; (unless cond) == (if (not (cond)))
-      ;; check per la directory del package
-      (unless (file-exists-p file)
-        (shell-command (concat "git clone --depth=1 "
-                               (plist-get package :package-repo-link) " " 3le4ms1/emacs-conf-dir
-                               "/foreign/repos/" (plist-get package :package-name))))
+      (when (executable-find "git")
+        ;; (unless cond) == (if (not (cond)))
+        ;; check per la directory del package
+        (unless (file-exists-p file)
+          (shell-command (concat "git clone --depth=1 "
+                                 (plist-get package :package-repo-link) " " 3le4ms1/emacs-conf-dir
+                                 "/foreign/repos/" (plist-get package :package-name)))))
       ;; (when cond) == (if cond) senza else branch
       ;; check necessario se non riesce ad installare il package (ex: in caso di
       ;; assenza di connessione ad internet)
       (when (file-exists-p file)
         (load file)))))
+
+;; TODO: set flag for foreign package to secure package config
+;; This can also be done by the (cond (file-exists-p file))
+;; Ex: (plist-put '(:flag t) :flag nil)
 
 (mapc #'3le4ms1/foreign-package-manager 3le4ms1/foreign-packages)
 
@@ -57,4 +72,5 @@
 (cl-loop for ext in '("\\.gpr$" "\\.ada$" "\\.ads$" "\\.adb$")
          do (add-to-list 'auto-mode-alist (cons ext 'ada-mode)))
 
+;; automata-theme
 ;;; foreign.el ends here.
