@@ -122,7 +122,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Configurazione di 3le
+# Configurazione di ucli
 
 # prompt
 # export PS1="\[\e[1m\][\[\e[m\]\[\e[38;5;172m\]\u\[\e[m\]@\[\e[38;5;153m\]\h\[\e[m\] \[\e[38;5;214m\]\W\[\e[m\]\[\e[31m\]]\[\e[m\]\\$ "

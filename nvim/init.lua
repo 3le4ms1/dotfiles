@@ -183,7 +183,7 @@ local function toggleComment()
                 vim.fn.setline(ln, uncomment_line(l))
             end
         else
-            -- comment all (for lines not commented yet we still prefix — this keeps it idempotent-ish)
+            -- comment all (for lines not commented yet we still prefix - this keeps it idempotent-ish)
             for ln = start_line, end_line do
                 local l = vim.fn.getline(ln)
                 -- avoid double-prefixing: if the line is already commented, leave it

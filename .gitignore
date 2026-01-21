@@ -2,12 +2,12 @@
 *.xopp
 *.elc
 
-# History files
-bash/.bash_history
+# Non useful files
 ghc/ghci_history
+bash/.bash_history
 bash/.dircolors
 
-# Non useful
+# Non useful directories
 git/
 Godot/
 audacious/
