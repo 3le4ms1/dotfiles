@@ -5,11 +5,12 @@
 # History files
 bash/.bash_history
 ghc/ghci_history
-nushell/history.txt
+bash/.dircolors
 
 # Non useful
 git/
 Godot/
+audacious/
 komorebi/
 pychess/
 xournalpp/
@@ -18,6 +19,10 @@ mypaint/
 darktable/
 mypaint/
 picard/
+ash/
+fastfetch/
+nushell/
+racket/
 
 # Games
 CassetteBeasts/

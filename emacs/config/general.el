@@ -69,6 +69,7 @@
 (setq-default default-tab-width 4)
 (setq-default tab-width 4)
 (setq-default foundamental-tab)
+(setq-default truncate-lines t)
 
 (setq make-backup-files nil)
 

@@ -28,9 +28,9 @@
                  orderless org-alert org-appear org-bullets org-roam
                  org-super-agenda ox-epub ox-gemini ox-rss paredit php-mode pomm
                  powershell racket-mode rainbow-delimiters restart-emacs
-                 rfc-mode ripgrep rust-mode sicp sly ssh svelte-mode tide
-                 toml-mode transient treemacs typescript-mode uxntal-mode
-                 vertico web-mode which-key yaml-mode zoom))
+                 rfc-mode ripgrep rust-mode sicp sly svelte-mode tide toml-mode
+                 transient treemacs typescript-mode uxntal-mode vertico web-mode
+                 which-key yaml-mode zoom))
  '(select-enable-clipboard t)
  '(show-trailing-whitespace nil)
  '(warning-suppress-log-types '((comp)))
