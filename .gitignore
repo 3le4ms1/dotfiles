@@ -8,12 +8,11 @@ ghc/ghci_history
 nushell/history.txt
 
 # Non useful
+git/
 Godot/
 komorebi/
-nvim/
 pychess/
 xournalpp/
-mypaint/
 scoop/
 mypaint/
 darktable/

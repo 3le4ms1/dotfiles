@@ -73,15 +73,17 @@ function Start-RandomFile {
     [OutputType([void])]
     param(
             [Parameter(Position=0, Mandatory=$true)]
-            [string]$extension = "mp3",
+            [string]$extension = "",
             [Parameter(Position=1, Mandatory=$false)]
             [string]$accept = "",
             [Parameter(Position=2, Mandatory=$false)]
             [string]$decline = "",
             [Parameter(Position=3, Mandatory=$false)]
             [switch]$recurse = $false,
-            [Parameter(Position=4, Mandatory=$false)]
-            [System.UInt32]$depth = 0
+            [parameter(position=4, mandatory=$false)]
+            [system.uint32]$depth = 0,
+            [parameter(position=5, mandatory=$false)]
+            [switch]$fullpath = $false
          );
     $extension = if ($Extension -notlike ".?*") {
         "*.$extension";
@@ -115,7 +117,12 @@ function Start-RandomFile {
         return
     }
     $file = $files | Get-Random;
-    Write-Host "Executing: $($file.Name)";
+    $logstring = if ($fullpath) {
+        "Executing: $($file)";
+    } else {
+        "Executing: $($file.Name)";
+    }
+    Write-Host $logstring;
     & $file.FullName;
 }
 
