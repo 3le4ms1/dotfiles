@@ -124,8 +124,7 @@ USRHOME=$HOME
 create_link "emacs"  ${SCRIPTDIR}/emacs/init.el      ${USRHOME}/.emacs
 create_link "bash"   ${SCRIPTDIR}/bash/.bashrc       ${USRHOME}/.bashrc
 create_link "bash"   ${SCRIPTDIR}/bash/.bash_profile ${USRHOME}/.bash_profile
-create_link "bash"   ${SCRIPTDIR}/bash/.dircolors    ${USRHOME}/.dircolors
-create_link "bash"   ${SCRIPTDIR}/bash/update.sh     ${USRHOME}/utils/update.sh
+create_link "sh"     ${SCRIPTDIR}/sh/update.sh       ${USRHOME}/utils/update.sh
 create_link "tmux"   ${SCRIPTDIR}/tmux/.tmux.conf    ${USRHOME}/.tmux.conf
 create_link "mintty" ${SCRIPTDIR}/bash/.minttyrc     ${USRHOME}/.minttyrc
 create_link "git"    ${SCRIPTDIR}/git/.gitconfig     ${USRHOME}/.gitconfig

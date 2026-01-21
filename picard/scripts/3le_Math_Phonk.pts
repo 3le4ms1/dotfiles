@@ -1,8 +1,0 @@
-$noop( script per le canzoni cantate )
-
-$set(title,$if(%album%,%album% - ,)
-	$if(%artist%,%artist% - ,)
-	%title%
-)
-
-%title%

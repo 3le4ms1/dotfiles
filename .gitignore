@@ -1,5 +1,4 @@
 *.log
-*.xopp
 *.elc
 
 # Non useful files
@@ -17,12 +16,14 @@ xournalpp/
 scoop/
 mypaint/
 darktable/
-mypaint/
 picard/
 ash/
 fastfetch/
 nushell/
 racket/
+btop/
+via/
+picard/
 
 # Games
 CassetteBeasts/

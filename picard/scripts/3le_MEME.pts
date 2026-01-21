@@ -1,9 +1,0 @@
-$noop( Script per i file ASMR )
-
-$set(title,
-	$if(%album%,%album% - ,)
-	$if(%artist%,%artist% - ,)
-	%title%
-)
-
-%title%
