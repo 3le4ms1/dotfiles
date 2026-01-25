@@ -72,24 +72,26 @@ function Start-RandomFile {
     [CmdletBinding()]
     [OutputType([void])]
     param(
-            [Parameter(Position=0, Mandatory=$true)]
-            [string]$extension = "",
-            [Parameter(Position=1, Mandatory=$false)]
-            [string]$accept = "",
-            [Parameter(Position=2, Mandatory=$false)]
-            [string]$decline = "",
-            [Parameter(Position=3, Mandatory=$false)]
-            [switch]$recurse = $false,
-            [parameter(position=4, mandatory=$false)]
-            [system.uint32]$depth = 0,
-            [parameter(position=5, mandatory=$false)]
-            [switch]$fullpath = $false
-         );
-    $extension = if ($Extension -notlike ".?*") {
-        "*.$extension";
+        [Parameter(Position=0, Mandatory=$true)]
+        [string]$extension = "",
+        [Parameter(Position=1, Mandatory=$false)]
+        [string]$accept = "",
+        [Parameter(Position=2, Mandatory=$false)]
+        [string]$decline = "",
+        [Parameter(Position=3, Mandatory=$false)]
+        [switch]$recurse = $false,
+        [parameter(Position=4, mandatory=$false)]
+        [system.uint32]$depth = 0,
+        [parameter(Position=5, mandatory=$false)]
+        [switch]$fullpath = $false
+    );
+
+    $extension = if ($extension -match "\*\.*") {
+        "$extension";
     } else {
-        "*$extension";
+        "*.$extension";
     }
+
     $files = if ($Recurse) {
         if ($depth -eq 0) {
             Get-ChildItem -Path . -Filter $extension -Recurse -File;
@@ -99,12 +101,15 @@ function Start-RandomFile {
     } else {
         Get-ChildItem -Path . -Filter $extension -File;
     }
+
     if ($accept -notlike $null) {
         $files = $files | where-object {$_.Name -like "*$accept*"};
     }
+
     if ($decline -notlike $null) {
         $files = $files | where-object {$_.Name -notlike "*$decline*"};
     }
+
     if ($files.Count -eq 0) {
         $err_str = "No such file found with extension `"${extension}`"";
         if ($accept -notlike $null) {
@@ -116,6 +121,7 @@ function Start-RandomFile {
         Write-Error $err_str;
         return
     }
+
     $file = $files | Get-Random;
     $logstring = if ($fullpath) {
         "Executing: $($file)";
@@ -142,8 +148,7 @@ function msys {
     try {
         $null = Test-Path (get-command "env").Source;
         & "env" @("MSYSTEM=$environment", "CHERE_INVOKING=1", "/usr/bin/bash", "-li");
-    } catch {
-    }
+    } catch {}
 }
 
 # Short prompt
